@@ -60,7 +60,7 @@ class RegisterActivity : AppCompatActivity() {
         )
             .addOnCompleteListener(MainActivity()) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(this, "Pomyślnie zarejestrowano", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Pomyślnie zarejestrowano XDDD", Toast.LENGTH_SHORT).show()
 
                     startActivity(Intent(this, LogoutActivity::class.java))
                     finish()
