@@ -10,7 +10,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class RegisterActivity : AppCompatActivity() {
 
-
+    //test:D
     private lateinit var user: FirebaseAuth
     private lateinit var binding: ActivityRegisterBinding
 
