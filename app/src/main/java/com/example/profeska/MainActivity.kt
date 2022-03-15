@@ -3,6 +3,7 @@ package com.example.profeska
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.example.profeska.databinding.ActivityMainBinding
@@ -63,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                                     startActivity(Intent(this,LogoutActivity::class.java))
                                     finish()
                                 }else{
-                                    Toast.makeText(this,"Nie ma takiego użytkownika",Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(this,"Błędny email lub hasło",Toast.LENGTH_SHORT).show()
                                 }
 
                             }
@@ -84,3 +85,4 @@ class MainActivity : AppCompatActivity() {
 
 
 }
+

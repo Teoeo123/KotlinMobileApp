@@ -14,7 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="ZALOGUJ"
+        android:text="@string/login"
+
         android:background="#F0BA26"
         app:layout_constraintEnd_toEndOf="@+id/etPassword"
         app:layout_constraintHorizontal_bias="0.491"
@@ -27,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="164dp"
         android:ems="10"
-        android:hint="Email"
+        android:hint="@string/email"
         android:textColor="@color/white"
         android:textColorHint="#F0BA26"
         android:inputType="textEmailAddress"
@@ -42,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="Hasło"
+        android:hint="@string/pass"
         android:textColorHint="#F0BA26"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/etEmail"
@@ -54,7 +55,7 @@
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ZAREJESTRUJ"
+        android:text="@string/reg"
         android:background="#F0BA26"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,6 +66,7 @@
         app:rippleColor="#BA2626" />
 
     <ImageView
+        android:contentDescription="@string/logo"
         android:id="@+id/imageView"
         android:layout_width="110dp"
         android:layout_height="119dp"
