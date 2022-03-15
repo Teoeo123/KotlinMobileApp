@@ -22,9 +22,7 @@ class RegisterActivity : AppCompatActivity() {
 
 
         binding.btnRegisterTv.setOnClickListener {
-
             signUpUser()
-
         }
 
 

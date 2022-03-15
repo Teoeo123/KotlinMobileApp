@@ -3,7 +3,6 @@ package com.example.profeska
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.profeska.databinding.ActivityMainBinding.inflate
 import com.example.profeska.databinding.ActivityLogoutBinding
 import com.google.firebase.auth.FirebaseAuth
 
