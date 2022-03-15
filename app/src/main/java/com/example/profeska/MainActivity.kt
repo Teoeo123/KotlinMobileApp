@@ -51,12 +51,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun signUser(){
+
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
 
         if(email.isNotEmpty() && password.isNotEmpty()){
-
-
                         user.signInWithEmailAndPassword(email,password)
                             .addOnCompleteListener{ mTask->
 
@@ -66,23 +65,8 @@ class MainActivity : AppCompatActivity() {
                                 }else{
                                     Toast.makeText(this,"Błędny email lub hasło",Toast.LENGTH_SHORT).show()
                                 }
-
                             }
-
-
-
-
-
-
         }
-
-
-
-
     }
-
-
-
-
 }
 
