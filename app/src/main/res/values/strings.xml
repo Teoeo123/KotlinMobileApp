@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Profeska</string>
+    <string name="app_name">GdzieMelanż</string>
+    <string name="login">Zaloguj</string>
+    <string name="email">Email</string>
+    <string name="pass">Hasło</string>
+    <string name="reg">ZAREJESTRUJ</string>
+    <string name="logo">Piwo</string>
 </resources>
