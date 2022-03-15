@@ -49,7 +49,14 @@ class RegisterActivity : AppCompatActivity() {
             return
 
         }
+        //żart :D
+        if (email.contains("wojcik") || email.contains("wójcik")) {
+            binding.reEmail.error = "Nie potrzebujemy cię w naszym składzie"
+            binding.reEmail.requestFocus()
+            Toast.makeText(this, "Nie no to tylko żart B^)", Toast.LENGTH_LONG).show()
+            return
 
+        }
 
         if (password.isEmpty() or (password.length < 8)) {
             binding.rePassword.error = "Wprowadz poprawne hasło"
