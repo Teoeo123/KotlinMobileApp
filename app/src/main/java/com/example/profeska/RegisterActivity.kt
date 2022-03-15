@@ -32,13 +32,18 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun signUpUser() {
 
+
+         val email = binding.reEmail.text.toString()
+         val password = binding.rePassword.text.toString()
+
+
         user = FirebaseAuth.getInstance()
-        if (binding.reEmail.text.toString().isEmpty()) {
+        if (email.isEmpty()) {
             Toast.makeText(this, "Email nie może być pusty!", Toast.LENGTH_SHORT).show()
             return
 
         }
-        if (!Patterns.EMAIL_ADDRESS.matcher(binding.reEmail.toString()).matches()) {
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             binding.reEmail.error = "Wprowadź poprawny adres email"
             binding.reEmail.requestFocus()
             return
@@ -46,7 +51,7 @@ class RegisterActivity : AppCompatActivity() {
         }
 
 
-        if (binding.rePassword.text.toString().isEmpty()) {
+        if (password.isEmpty() or (password.length < 8)) {
             binding.rePassword.error = "Wprowadz poprawne hasło"
             binding.rePassword.requestFocus()
             return
@@ -55,8 +60,8 @@ class RegisterActivity : AppCompatActivity() {
 
 
         user.createUserWithEmailAndPassword(
-            binding.reEmail.text.toString(),
-            binding.rePassword.text.toString()
+            email,
+            password
         )
             .addOnCompleteListener(MainActivity()) { task ->
                 if (task.isSuccessful) {
