@@ -4,28 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
-import android.view.View
-import android.widget.EditText
 import android.widget.Toast
 import com.example.profeska.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
-
 
 class RegisterActivity : AppCompatActivity() {
 //ugabuga nie umiem w gita
     private lateinit var user: FirebaseAuth
     private lateinit var binding: ActivityRegisterBinding
 
-
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        fullScreen(window)
 
 
 
@@ -39,15 +31,13 @@ class RegisterActivity : AppCompatActivity() {
     private fun signUpUser() {
 
 
-
          val email = binding.reEmail.text.toString()
          val password = binding.rePassword.text.toString()
 
 
         user = FirebaseAuth.getInstance()
         if (email.isEmpty()) {
-            binding.reEmail.error = "Wprowadź poprawny adres email"
-            binding.reEmail.requestFocus()
+            Toast.makeText(this, "Email nie może być pusty!", Toast.LENGTH_SHORT).show()
             return
 
         }
@@ -66,11 +56,9 @@ class RegisterActivity : AppCompatActivity() {
 
         }
 
-
-
         if (password.isEmpty() or (password.length < 8)) {
             binding.rePassword.error = "Wprowadz poprawne hasło"
-
+            binding.rePassword.requestFocus()
             return
 
         }
