@@ -3,7 +3,9 @@ package com.example.profeska
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import com.example.profeska.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -18,10 +20,9 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        fullScreen(window)
+
         user = FirebaseAuth.getInstance()
 
         checkIfUserIsLogged()
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener{
             startActivity(Intent(this,RegisterActivity::class.java))
+
         }
 
 
@@ -64,12 +66,5 @@ class MainActivity : AppCompatActivity() {
                             }
         }
     }
-    override fun onBackPressed() {
-        user.signOut()
-
-        finishAffinity()
-    }
 }
-
-
 
