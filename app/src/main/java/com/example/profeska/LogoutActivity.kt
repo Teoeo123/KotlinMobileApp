@@ -3,6 +3,7 @@ package com.example.profeska
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.profeska.databinding.ActivityMainBinding.inflate
 import com.example.profeska.databinding.ActivityLogoutBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -12,18 +13,21 @@ class LogoutActivity : AppCompatActivity() {
     private lateinit var user: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding= ActivityLogoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        user = FirebaseAuth.getInstance()
 
+        user = FirebaseAuth.getInstance()
 
 
         if(user.currentUser !=null){
             user.currentUser?.let {
 
                 binding.tvUserEmail.text = it.email
+                binding.tvUID.text = it.uid
             }
         }
+
 
         binding.btnSignOut.setOnClickListener {
             user.signOut()
@@ -31,9 +35,8 @@ class LogoutActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.zalogujPonownieBtn.setOnClickListener{
-            startActivity(Intent(this,activity_glowne::class.java))
-            finish()
+        binding.btnProfil.setOnClickListener {
+            startActivity(Intent(this,ProfilEditActivity::class.java))
         }
     }
 }
