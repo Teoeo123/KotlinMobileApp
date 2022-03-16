@@ -3,7 +3,9 @@ package com.example.profeska
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.ActionBar
 import com.example.profeska.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -20,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        fullScreen(window)
+
         user = FirebaseAuth.getInstance()
 
         checkIfUserIsLogged()
@@ -31,6 +33,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnRegister.setOnClickListener{
             startActivity(Intent(this,RegisterActivity::class.java))
+
+
+
         }
 
 
@@ -46,22 +51,38 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun signUser(){
-
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
 
         if(email.isNotEmpty() && password.isNotEmpty()){
+
+
                         user.signInWithEmailAndPassword(email,password)
                             .addOnCompleteListener{ mTask->
 
                                 if(mTask.isSuccessful){
-                                    startActivity(Intent(this,activity_glowne::class.java))
+                                    startActivity(Intent(this,LogoutActivity::class.java))
                                     finish()
                                 }else{
                                     Toast.makeText(this,"Błędny email lub hasło",Toast.LENGTH_SHORT).show()
                                 }
+
                             }
+
+
+
+
+
+
         }
+
+
+
+
     }
+
+
+
+
 }
 

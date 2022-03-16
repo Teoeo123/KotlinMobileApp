@@ -4,14 +4,21 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.view.View
+import android.widget.EditText
 import android.widget.Toast
 import com.example.profeska.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
+
 
 class RegisterActivity : AppCompatActivity() {
 //ugabuga nie umiem w gita
     private lateinit var user: FirebaseAuth
     private lateinit var binding: ActivityRegisterBinding
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +37,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun signUpUser() {
+
 
 
          val email = binding.reEmail.text.toString()
@@ -56,6 +64,8 @@ class RegisterActivity : AppCompatActivity() {
             return
 
         }
+
+
 
         if (password.isEmpty() or (password.length < 8)) {
             binding.rePassword.error = "Wprowadz poprawne hasło"
