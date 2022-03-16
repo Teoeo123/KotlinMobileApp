@@ -44,6 +44,8 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/pass"
+
+
         android:textColorHint="#F0BA26"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/etEmail"

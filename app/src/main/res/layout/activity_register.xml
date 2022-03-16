@@ -4,13 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".RegisterActivity">
 
     <Button
         android:id="@+id/btnRegisterTv"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:paddingHorizontal="20dp"
+        android:background="@color/button"
         android:text="ZAREJESTRUJ"
         app:layout_constraintEnd_toEndOf="@+id/reEmail"
         app:layout_constraintHorizontal_bias="0.491"
@@ -23,12 +27,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
         android:hint="Email"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:textColorHint="@color/button" />
 
     <EditText
         android:id="@+id/rePassword"
@@ -38,12 +43,11 @@
         android:ems="10"
         android:hint="Hasło"
         android:inputType="textPassword"
+        android:textColorHint="@color/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reEmail" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
