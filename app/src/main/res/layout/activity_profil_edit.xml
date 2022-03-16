@@ -6,40 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ProfilEditActivity">
 
-    <Button
-        android:id="@+id/btnCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="#F44336"
-        android:text="Odrzuć"
-        app:layout_constraintEnd_toEndOf="@+id/etUserCity"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/etUserCity"
-        app:layout_constraintTop_toBottomOf="@+id/rgSex" />
-
-    <ImageView
-        android:id="@+id/profPicEdit"
-        android:layout_width="300px"
-        android:layout_height="300px"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/etUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="72dp"
         android:ems="10"
-        android:hint="Imie"
         android:inputType="textPersonName"
+        android:hint="Imie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profPicEdit" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etUserSName"
@@ -60,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:inputType="numberDecimal"
+        android:inputType="textPersonName"
         android:hint="Numer Telefonu"
         app:layout_constraintEnd_toEndOf="@+id/etUserSName"
         app:layout_constraintHorizontal_bias="0.0"
@@ -92,8 +70,8 @@
 
     <RadioGroup
         android:id="@+id/rgSex"
-        android:layout_width="201dp"
-        android:layout_height="104dp"
+        android:layout_width="174dp"
+        android:layout_height="105dp"
         app:layout_constraintStart_toStartOf="@+id/etUserCity"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
@@ -117,14 +95,13 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/btnAcc"
+        android:id="@+id/btnProf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="#4CAF50"
-        android:text="Zatwierdź"
-        app:layout_constraintEnd_toStartOf="@+id/btnCancel"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="72dp"
+        android:text="Profil"
+        app:layout_constraintEnd_toEndOf="@+id/etUserCity"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/etUserCity"
         app:layout_constraintTop_toBottomOf="@+id/rgSex" />
 

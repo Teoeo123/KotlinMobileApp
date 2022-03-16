@@ -24,6 +24,12 @@
             android:name=".ProfilActivity"
             android:exported="false" />
         <activity
+            android:name=".ProfilEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfilActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity

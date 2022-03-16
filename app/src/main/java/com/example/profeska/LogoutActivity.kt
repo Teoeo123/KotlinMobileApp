@@ -3,7 +3,6 @@ package com.example.profeska
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.profeska.databinding.ActivityMainBinding.inflate
 import com.example.profeska.databinding.ActivityLogoutBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -16,7 +15,7 @@ class LogoutActivity : AppCompatActivity() {
 
         binding= ActivityLogoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        fullScreen(window)
+
         user = FirebaseAuth.getInstance()
 
 
@@ -36,7 +35,7 @@ class LogoutActivity : AppCompatActivity() {
         }
 
         binding.btnProfil.setOnClickListener {
-            startActivity(Intent(this,ProfilActivity::class.java))
+            startActivity(Intent(this,ProfilEditActivity::class.java))
         }
     }
 }
