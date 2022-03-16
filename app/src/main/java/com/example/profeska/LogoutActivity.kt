@@ -30,5 +30,10 @@ class LogoutActivity : AppCompatActivity() {
             startActivity(Intent(this,MainActivity::class.java))
             finish()
         }
+
+        binding.zalogujPonownieBtn.setOnClickListener{
+            startActivity(Intent(this,activity_glowne::class.java))
+            finish()
+        }
     }
 }

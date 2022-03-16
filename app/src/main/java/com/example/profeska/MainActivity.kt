@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
                             .addOnCompleteListener{ mTask->
 
                                 if(mTask.isSuccessful){
-                                    startActivity(Intent(this,LogoutActivity::class.java))
+                                    startActivity(Intent(this,activity_glowne::class.java))
                                     finish()
                                 }else{
                                     Toast.makeText(this,"Błędny email lub hasło",Toast.LENGTH_SHORT).show()
