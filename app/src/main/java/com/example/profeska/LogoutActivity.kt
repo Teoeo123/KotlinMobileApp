@@ -13,19 +13,21 @@ class LogoutActivity : AppCompatActivity() {
     private lateinit var user: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding= ActivityLogoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fullScreen(window)
         user = FirebaseAuth.getInstance()
 
 
-
         if(user.currentUser !=null){
             user.currentUser?.let {
 
                 binding.tvUserEmail.text = it.email
+                binding.tvUID.text = it.uid
             }
         }
+
 
         binding.btnSignOut.setOnClickListener {
             user.signOut()
@@ -33,9 +35,8 @@ class LogoutActivity : AppCompatActivity() {
             finish()
         }
 
-        binding.btnProfil.setOnClickListener{
+        binding.btnProfil.setOnClickListener {
             startActivity(Intent(this,ProfilActivity::class.java))
-            finish()
         }
     }
 }

@@ -46,7 +46,8 @@ class RegisterActivity : AppCompatActivity() {
 
         user = FirebaseAuth.getInstance()
         if (email.isEmpty()) {
-            Toast.makeText(this, "Email nie może być pusty!", Toast.LENGTH_SHORT).show()
+            binding.reEmail.error = "Wprowadź poprawny adres email"
+            binding.reEmail.requestFocus()
             return
 
         }
@@ -69,7 +70,7 @@ class RegisterActivity : AppCompatActivity() {
 
         if (password.isEmpty() or (password.length < 8)) {
             binding.rePassword.error = "Wprowadz poprawne hasło"
-            binding.rePassword.requestFocus()
+
             return
 
         }
