@@ -1,7 +1,10 @@
 package com.example.profeska
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowInsets
+import android.view.WindowManager
 import android.widget.RadioButton
 import com.example.profeska.databinding.ActivityProfilEditBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -18,6 +21,8 @@ class ProfilEditActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profil_edit)
+
+       fullScreen(window)
 
         binding = ActivityProfilEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
