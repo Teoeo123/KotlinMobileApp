@@ -16,7 +16,7 @@ class LogoutActivity : AppCompatActivity() {
 
         binding= ActivityLogoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        fullScreen(window)
         user = FirebaseAuth.getInstance()
 
 
