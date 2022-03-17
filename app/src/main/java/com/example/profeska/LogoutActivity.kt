@@ -35,7 +35,7 @@ class LogoutActivity : AppCompatActivity() {
         }
 
         binding.btnProfil.setOnClickListener {
-            startActivity(Intent(this,ProfilEditActivity::class.java))
+            startActivity(Intent(this,ProfilActivity::class.java))
         }
     }
 }
