@@ -18,11 +18,10 @@ class ProfilActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profil)
-
-        fullScreen(window)
+        //setContentView(R.layout.activity_profil)
         binding = ActivityProfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        fullScreen(window)
 
         user = FirebaseAuth.getInstance()
         val id=user.uid
