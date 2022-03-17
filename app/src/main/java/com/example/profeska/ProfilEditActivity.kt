@@ -1,5 +1,6 @@
 package com.example.profeska
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,12 +24,12 @@ class ProfilEditActivity : AppCompatActivity() {
         setContentView(R.layout.activity_profil_edit)
 
        fullScreen(window)
-
         binding = ActivityProfilEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        var plec ="inne"
-        val firebase = FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")
 
+        var plec ="inne"
+
+        val firebase = FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")
         user = FirebaseAuth.getInstance()
         myRef = firebase.getReference("users")
         val id=user.uid
@@ -47,6 +48,7 @@ class ProfilEditActivity : AppCompatActivity() {
             val city = binding.etUserCity.text.toString()
             val firebaseInput = DatabaseRow(name,sName,number,city,plec)
             myRef.child(id.toString()).setValue(firebaseInput)
+            startActivity(Intent(this,ProfilActivity::class.java))
         }
 
     }
