@@ -17,6 +17,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        fullScreen(window)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fullScreen(window)
