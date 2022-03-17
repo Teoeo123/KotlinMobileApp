@@ -21,11 +21,12 @@ class ProfilEditActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profil_edit)
+        //setContentView(R.layout.activity_profil_edit)
 
-       fullScreen(window)
+
         binding = ActivityProfilEditBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        fullScreen(window)
 
         var plec ="inne"
 
