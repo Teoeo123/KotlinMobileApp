@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ProfilActivity">
 
+
+    <ImageView
+        android:id="@+id/imgProfPic"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/txtNazwiP"
         android:layout_width="350dp"
@@ -51,12 +61,12 @@
         android:id="@+id/txtImieP"
         android:layout_width="350dp"
         android:layout_height="46dp"
-        android:layout_marginTop="48dp"
         android:text="Imie"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imgProfPic" />
 
     <Button
         android:id="@+id/btnEditProfP"

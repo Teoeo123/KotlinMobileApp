@@ -1,14 +1,19 @@
 package com.example.profeska
 
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import com.example.profeska.databinding.ActivityProfilBinding
 import com.example.profeska.databinding.ActivityProfilEditBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
+import com.google.firebase.storage.FirebaseStorage
+import java.io.File
 
 class ProfilActivity : AppCompatActivity() {
 
@@ -22,10 +27,22 @@ class ProfilActivity : AppCompatActivity() {
         binding = ActivityProfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fullScreen(window)
-
         user = FirebaseAuth.getInstance()
         val id=user.uid
         readUData(id)
+
+        val imageName = "basic-profil.png"
+        val storageRef= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("users/$imageName")
+        val localFile = File.createTempFile("temp","png")
+
+        storageRef.getFile(localFile).addOnSuccessListener {
+            val bitmap =BitmapFactory.decodeFile(localFile.absolutePath)
+            Log.d("Test","sucess")
+            binding.imgProfPic.setImageBitmap(bitmap)
+        }.addOnFailureListener{
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT)
+        }
+
         binding.btnEditProfP.setOnClickListener {
             startActivity(Intent(this,ProfilEditActivity::class.java))
         }
