@@ -6,18 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".ProfilEditActivity">
 
+    <ImageView
+        android:id="@+id/profPicEdit"
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <EditText
         android:id="@+id/etUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Imie"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/profPicEdit" />
 
     <EditText
         android:id="@+id/etUserSName"
@@ -70,8 +80,8 @@
 
     <RadioGroup
         android:id="@+id/rgSex"
-        android:layout_width="174dp"
-        android:layout_height="105dp"
+        android:layout_width="201dp"
+        android:layout_height="104dp"
         app:layout_constraintStart_toStartOf="@+id/etUserCity"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
@@ -98,7 +108,7 @@
         android:id="@+id/btnProf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="72dp"
+        android:layout_marginTop="52dp"
         android:text="Profil"
         app:layout_constraintEnd_toEndOf="@+id/etUserCity"
         app:layout_constraintHorizontal_bias="0.491"

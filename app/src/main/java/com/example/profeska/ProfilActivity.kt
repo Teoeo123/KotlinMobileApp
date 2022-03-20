@@ -1,5 +1,6 @@
 package com.example.profeska
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.BitmapFactory
 import android.graphics.drawable.BitmapDrawable
@@ -37,10 +38,10 @@ class ProfilActivity : AppCompatActivity() {
 
         storageRef.getFile(localFile).addOnSuccessListener {
             val bitmap =BitmapFactory.decodeFile(localFile.absolutePath)
-            Log.d("Test","sucess")
+            Log.d("ProfPic","Success")
             binding.imgProfPic.setImageBitmap(bitmap)
         }.addOnFailureListener{
-                Toast.makeText(this, "Error", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
         }
 
         binding.btnEditProfP.setOnClickListener {
@@ -53,7 +54,8 @@ class ProfilActivity : AppCompatActivity() {
 
     }
 
-    private fun readUData(user:String?, ){
+    @SuppressLint("SetTextI18n")
+    private fun readUData(user:String?){
 
         val firebase = FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")
         myRef = firebase.getReference("users").child(user.toString())
