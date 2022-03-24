@@ -3,16 +3,13 @@ package com.example.profeska
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.profeska.databinding.ActivityProfilBinding
-import com.example.profeska.databinding.ActivityProfilEditBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.storage.FirebaseStorage
 import java.io.File
 
@@ -33,15 +30,22 @@ class ProfilActivity : AppCompatActivity() {
         readUData(id)
 
         val imageName = "basic-profil.png"
+        val storageRefIfAdd= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("users/$id")
         val storageRef= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("users/$imageName")
         val localFile = File.createTempFile("temp","png")
 
-        storageRef.getFile(localFile).addOnSuccessListener {
+        storageRefIfAdd.getFile(localFile).addOnSuccessListener {
             val bitmap =BitmapFactory.decodeFile(localFile.absolutePath)
             Log.d("ProfPic","Success")
             binding.imgProfPic.setImageBitmap(bitmap)
         }.addOnFailureListener{
+            storageRef.getFile(localFile).addOnSuccessListener {
+                val bitmap =BitmapFactory.decodeFile(localFile.absolutePath)
+                Log.d("ProfPic","Success")
+                binding.imgProfPic.setImageBitmap(bitmap)
+            }.addOnFailureListener {
                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.btnEditProfP.setOnClickListener {
@@ -62,11 +66,11 @@ class ProfilActivity : AppCompatActivity() {
         myRef.get().addOnSuccessListener {
 
             if(it.exists()){
-                binding.txtImieP.text="Imie: "+it.child("name").value.toString()
-                binding.txtNazwiP.text="Nazwisko: "+it.child("sname").value.toString()
-                binding.txtMiastP.text="Telefon: "+it.child("city").value.toString()
-                binding.txtNumP.text="Miasto: "+it.child("number").value.toString()
-                binding.txtPlecP.text="Płeć: "+it.child("sex").value.toString()
+                binding.txtImieP.text="Imie: ${it.child("name").value.toString()}"
+                binding.txtNazwiP.text="Nazwisko: ${it.child("sname").value.toString()}"
+                binding.txtMiastP.text="Telefon: ${it.child("city").value.toString()}"
+                binding.txtNumP.text="Miasto: ${it.child("number").value.toString()}"
+                binding.txtPlecP.text="Płeć: ${it.child("sex").value.toString()}"
             }
             else{
                 Toast.makeText(this,"Nie uzupełniłes profilu",Toast.LENGTH_SHORT).show()
