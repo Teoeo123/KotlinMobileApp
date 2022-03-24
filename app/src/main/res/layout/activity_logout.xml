@@ -3,67 +3,46 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:padding="32dp"
+
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".LogoutActivity">
 
-    <Button
-        android:id="@+id/btnSignOut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Wyloguj"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tvUserEmail"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@+id/tvUserEmail"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserEmail"
-        app:layout_constraintVertical_bias="1.0" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Witaj "
-        android:textColor="@color/black"
-        android:textSize="20sp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvUserEmail"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="user email"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:paddingTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/border"
+        android:backgroundTint="#CF1010"
+        app:itemIconTint="@color/ic_launcher_background"
+        app:itemRippleColor="#C10C0C"
+        app:itemTextColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:menu="@menu/bottom_menu">
 
-    <TextView
-        android:id="@+id/tvUID"
-        android:layout_width="346dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:text="UID"
-        app:layout_constraintEnd_toEndOf="@+id/tvUserEmail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvUserEmail"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserEmail" />
 
-    <Button
-        android:id="@+id/btnProfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Profil"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignOut"
-        app:layout_constraintEnd_toEndOf="@+id/btnSignOut"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btnSignOut" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

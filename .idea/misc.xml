@@ -3,14 +3,33 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/border.xml" value="0.25" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/gradient_background.xml" value="0.22" />
-        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_logout.xml" value="0.25" />
-        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/home_selector.xml" value="0.34" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.34" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.273" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/ic_home.xml" value="0.24" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/ic_home_selected.xml" value="0.24" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/ic_mars.xml" value="0.333" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/ic_phone.xml" value="0.333" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/ic_user_selected.xml" value="0.1935" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/ic_venus.xml" value="0.333" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/profile_selector.xml" value="0.1935" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_glowne.xml" value="0.2682291666666667" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_logout.xml" value="0.33" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_profil.xml" value="0.25" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_profil_edit.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/fragment1.xml" value="0.75" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/fragment_home.xml" value="0.35104166666666664" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/fragment_main.xml" value="0.1" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/menu/bottom_menu.xml" value="0.33" />
+        <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2135" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_logout.xml" value="0.33" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_profil.xml" value="0.33" />
-        <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_profil_edit.xml" value="0.33" />
+        <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_profil_edit.xml" value="0.25" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_register.xml" value="0.18802083333333333" />
       </map>
     </option>

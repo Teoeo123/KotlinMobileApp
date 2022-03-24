@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.example.profeska.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 
+
 class RegisterActivity : AppCompatActivity() {
 //ugabuga nie umiem w gita
     private lateinit var user: FirebaseAuth
@@ -20,10 +21,12 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
         fullScreen(window)
 
-
+       
 
         binding.btnRegisterTv.setOnClickListener {
             signUpUser()
+
+
         }
 
 
@@ -73,6 +76,8 @@ class RegisterActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     Toast.makeText(this, "Pomyślnie zarejestrowano XDDD", Toast.LENGTH_SHORT).show()
 
+
+
                     startActivity(Intent(this, LogoutActivity::class.java))
                     finish()
 
@@ -83,3 +88,5 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 }
+
+

@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".ProfilEditActivity">
 
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#F44336"
+        android:text="Odrzuć"
+        app:layout_constraintEnd_toEndOf="@+id/etUserCity"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/etUserCity"
+        app:layout_constraintTop_toBottomOf="@+id/rgSex" />
+
+
     <ImageView
         android:id="@+id/profPicEdit"
         android:layout_width="300px"
@@ -14,7 +28,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/basicprofil"/>
 
     <EditText
         android:id="@+id/etUserName"
@@ -105,13 +120,14 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/btnProf"
+        android:id="@+id/btnAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="Profil"
-        app:layout_constraintEnd_toEndOf="@+id/etUserCity"
-        app:layout_constraintHorizontal_bias="0.491"
+        android:layout_marginTop="60dp"
+        android:backgroundTint="#4CAF50"
+        android:text="Zatwierdź"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancel"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etUserCity"
         app:layout_constraintTop_toBottomOf="@+id/rgSex" />
 

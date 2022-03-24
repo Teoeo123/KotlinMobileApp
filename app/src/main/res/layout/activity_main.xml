@@ -27,6 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="164dp"
+        android:backgroundTint="@color/button"
         android:ems="10"
         android:hint="@string/email"
         android:textColor="@color/white"
@@ -45,9 +46,10 @@
         android:ems="10"
         android:hint="@string/pass"
 
-
-        android:textColorHint="#F0BA26"
+        android:backgroundTint="@color/button"
         android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="#F0BA26"
         app:layout_constraintEnd_toEndOf="@+id/etEmail"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/etEmail"
@@ -73,6 +75,7 @@
         android:layout_width="110dp"
         android:layout_height="119dp"
         android:rotation="-45"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
