@@ -1,6 +1,7 @@
 package com.example.profeska
 
 import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.content.Intent
 import android.content.UriMatcher
 import android.graphics.BitmapFactory
@@ -60,7 +61,7 @@ class ProfilEditActivity : AppCompatActivity() {
             val city = binding.etUserCity.text.toString()
             val firebaseInput = DatabaseRow(name,sName,number,city,plec)
             myRef.child(id.toString()).setValue(firebaseInput)
-            startActivity(Intent(this,ProfilActivity::class.java))
+            startActivity(Intent(this,LogoutActivity::class.java))
             if(imageUri!=null) {
                 uploadImage()
             }
@@ -74,6 +75,10 @@ class ProfilEditActivity : AppCompatActivity() {
     }
 
     private  fun uploadImage(){
+        val progressDialog = ProgressDialog(this)
+        progressDialog.setMessage("Upload Image")
+        progressDialog.setCancelable(false)
+        progressDialog.show()
         val fileName = user.uid
         val storageRef= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("users/$fileName")
         storageRef.putFile((imageUri))
