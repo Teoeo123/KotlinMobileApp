@@ -76,4 +76,15 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/btnSignOut" />
 
+    <Button
+        android:id="@+id/btnEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Event"
+        app:layout_constraintBottom_toTopOf="@+id/btnProfil"
+        app:layout_constraintEnd_toEndOf="@+id/btnProfil"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/btnProfil" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

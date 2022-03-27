@@ -21,6 +21,12 @@
         android:exported="false"/>
 
         <activity
+            android:name=".EventEditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfilEditActivity"
             android:exported="false" />
         <activity
