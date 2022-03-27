@@ -37,5 +37,10 @@ class LogoutActivity : AppCompatActivity() {
         binding.btnProfil.setOnClickListener {
             startActivity(Intent(this,ProfilActivity::class.java))
         }
+
+        binding.btnEvent.setOnClickListener {
+            startActivity(Intent(this,EventsActivity::class.java))
+        }
+
     }
 }
