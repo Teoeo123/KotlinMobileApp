@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Profeska">
         <activity
+            android:name=".EventShowActivity"
+            android:exported="false" />
+        <activity
             android:name=".EventEditActivity"
             android:exported="false" />
         <activity

@@ -1,12 +1,19 @@
 package com.example.profeska
 
+import android.content.Intent
+import android.content.Intent.ACTION_VIEW
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.LinearLayoutCompat
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat.startActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.storage.FirebaseStorage
@@ -30,6 +37,13 @@ class MyAdapter(private val dataArray: ArrayList<DatabaseEvent>): RecyclerView.A
             val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
             holder.pic.setImageBitmap(bitmap)
         }
+        holder.click.setOnClickListener{
+            Log.d("test","klikanie działa")
+            val myIntent= Intent(holder.itemView.context,EventShowActivity::class.java)
+            myIntent.putExtra("id",photo)
+            startActivity(holder.itemView.context,myIntent,null)
+
+        }
 
     }
 
@@ -44,4 +58,5 @@ class MyViewHolder(private val view: View): RecyclerView.ViewHolder(view)
     val name=view.findViewById(R.id.eName) as TextView
     val des=view.findViewById(R.id.eDes) as TextView
     val pic=view.findViewById(R.id.eventImg) as ImageView
+    val click=view.findViewById(R.id.relativeLayout) as ConstraintLayout
 }
