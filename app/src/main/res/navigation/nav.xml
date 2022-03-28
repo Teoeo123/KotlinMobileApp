@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/fragmentOne">
+
+    <fragment
+        android:id="@+id/fragmentOne"
+        android:name="com.example.profeska.Fragment1"
+        android:label="Fragment1" >
+        <action
+            android:id="@+id/action_fragment1_to_profilActivity"
+            app:destination="@id/profilActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/profilActivity"
+        android:name="com.example.profeska.ProfilActivity"
+        android:label="activity_profil"
+        tools:layout="@layout/activity_profil" />
+</navigation>
