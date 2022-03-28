@@ -21,6 +21,9 @@
         android:exported="false"/>
 
         <activity
+            android:name=".EventShowActivity"
+            android:exported="false" />
+        <activity
             android:name=".EventEditActivity"
             android:exported="false" />
         <activity
