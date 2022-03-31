@@ -102,11 +102,22 @@ class ProfilEditActivity : AppCompatActivity() {
             myRef.get().addOnSuccessListener {
 
                 if (it.exists()) {
-                    binding.etUserName.hint = "Imie: ${it.child("name").value.toString()}"
-                    binding.etUserSName.hint = "Nazwisko: ${it.child("sname").value.toString()}"
-                    binding.etUserCity.hint = "Miasto: ${it.child("city").value.toString()}"
-                    binding.etUserPhon.hint = "Numer: ${it.child("number").value.toString()}"
-                    //binding.rgSex="Płeć: ${it.child("sex").value.toString()}"
+                    binding.etUserName.setText(it.child("name").value.toString())
+                    binding.etUserSName.setText(it.child("sname").value.toString())
+                    binding.etUserCity.setText(it.child("city").value.toString())
+                    binding.etUserPhon.setText(it.child("number").value.toString())
+                    val tmp = it.child("sex").value.toString()
+
+                    if(tmp=="Mężczyzna"){
+                        binding.rMa.isChecked=true
+                    }
+                    if(tmp=="Kobieta"){
+                        binding.rFe.isChecked=true
+                    }
+                    if(tmp=="Inne"){
+                        binding.rNo.isChecked=true
+                    }
+
                 }
 
             }

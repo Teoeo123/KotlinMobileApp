@@ -23,6 +23,7 @@ class LogoutActivity : AppCompatActivity() {
         user = FirebaseAuth.getInstance()
 
         val profileFragment = Fragment1()
+        val addFragment = AddFragment()
         val homeFragment = HomeFragment()
 
         makeCurrentFragment(homeFragment)
@@ -31,6 +32,7 @@ class LogoutActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.ic_profile -> makeCurrentFragment(profileFragment)
                 R.id.ic_home -> makeCurrentFragment(homeFragment)
+                R.id.ic_party -> makeCurrentFragment(addFragment)
             }
             true
         }

@@ -10,5 +10,7 @@
         android:icon="@drawable/profile_selector"
         android:id="@+id/ic_profile"/>
 
-    <item android:title="Item" />
+    <item android:title="Utwórz"
+        android:id="@+id/ic_party"
+        android:icon="@drawable/party_selector"/>
 </menu>

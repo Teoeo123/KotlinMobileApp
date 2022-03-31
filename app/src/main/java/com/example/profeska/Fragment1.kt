@@ -115,6 +115,26 @@ class Fragment1 : Fragment(R.layout.fragment1) {
                     )
                 }
 
+                if(binding.txtPlecP.text.contains("Inne")){
+                    binding.txtPlecP.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                        R.drawable.ic_other,
+                    0,
+                        0,
+                        0
+                    )
+                }
+
+
+                if(binding.txtNumP.text.contains("420")){
+                    binding.txtNumP.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                        R.drawable.ic_weed,
+                        0,
+                        0,
+                        0
+                    )
+                }
+
+
 
 
 

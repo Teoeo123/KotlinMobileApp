@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+
     tools:context=".ProfilEditActivity">
 
 
@@ -33,6 +35,8 @@
 
     <EditText
         android:id="@+id/etUserName"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -47,6 +51,8 @@
     <EditText
         android:id="@+id/etUserSName"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/button"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
@@ -59,11 +65,13 @@
 
     <EditText
         android:id="@+id/etUserPhon"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="numberDecimal"
         android:hint="Numer Telefonu"
         app:layout_constraintEnd_toEndOf="@+id/etUserSName"
         app:layout_constraintHorizontal_bias="0.0"
@@ -76,6 +84,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:ems="10"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/button"
         android:hint="Miasto"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/etUserPhon"
@@ -89,6 +99,7 @@
         android:layout_height="36dp"
         android:layout_marginTop="20dp"
         android:text="Płeć:"
+        android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/etUserCity"
         app:layout_constraintTop_toBottomOf="@+id/etUserCity" />
@@ -102,19 +113,25 @@
 
         <RadioButton
             android:id="@+id/rMa"
+            android:buttonTint="@color/ic_launcher_background"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mężczyzna" />
 
         <RadioButton
             android:id="@+id/rFe"
+            android:buttonTint="@color/ic_launcher_background"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="Kobieta" />
 
         <RadioButton
             android:id="@+id/rNo"
             android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:buttonTint="@color/ic_launcher_background"
             android:layout_height="wrap_content"
             android:text="Inne" />
     </RadioGroup>

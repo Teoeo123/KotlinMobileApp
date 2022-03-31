@@ -9,11 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Profeska" >
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Profeska.NoActionBar" />
+
         <activity
             android:name=".activity_glowne"
             android:exported="false" />
@@ -23,12 +19,11 @@
         <activity
             android:name=".ProfilActivity"
             android:exported="false" />
-        <activity
-            android:name=".ProfilEditActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ProfilActivity"
-            android:exported="false" />
+        <activity android:name=".EventShowActivity"
+        android:exported="false"/>
+
+        <activity android:name=".EventEditActivity"
+                android:exported="false"/>
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
