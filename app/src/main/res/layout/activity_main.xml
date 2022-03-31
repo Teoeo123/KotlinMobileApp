@@ -29,6 +29,8 @@
         android:layout_marginTop="164dp"
         android:backgroundTint="@color/button"
         android:ems="10"
+        android:textCursorDrawable="@drawable/black_cursor"
+
         android:hint="@string/email"
         android:textColor="@color/white"
         android:textColorHint="#F0BA26"
@@ -45,7 +47,7 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:hint="@string/pass"
-
+        android:textCursorDrawable="@drawable/black_cursor"
         android:backgroundTint="@color/button"
         android:inputType="textPassword"
         android:textColor="@color/white"

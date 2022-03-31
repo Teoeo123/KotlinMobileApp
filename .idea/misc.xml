@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/black_cursor.xml" value="0.1" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/border.xml" value="0.25" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/gradient_background.xml" value="0.22" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/home_selector.xml" value="0.34" />
@@ -17,7 +18,7 @@
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/profile_selector.xml" value="0.1935" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_glowne.xml" value="0.2682291666666667" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_logout.xml" value="0.33" />
-        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_profil.xml" value="0.25" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_profil_edit.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_register.xml" value="0.22" />
