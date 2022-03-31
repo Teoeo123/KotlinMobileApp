@@ -49,42 +49,15 @@
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="157dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_gmlogo" />
 
-
-
-
-
-    <TextView
-        android:id="@+id/tvUID"
-        android:layout_width="346dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:text="UID"
-        app:layout_constraintEnd_toEndOf="@+id/tvUserEmail"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvUserEmail"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserEmail" />
-
-    <Button
-        android:id="@+id/btnProfil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Profil"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignOut"
-        app:layout_constraintEnd_toEndOf="@+id/btnSignOut"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btnSignOut" />
-
-    <Button
-        android:id="@+id/btnEvent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Event"
-        app:layout_constraintBottom_toTopOf="@+id/btnProfil"
-        app:layout_constraintEnd_toEndOf="@+id/btnProfil"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/btnProfil" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

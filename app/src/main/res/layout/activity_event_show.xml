@@ -7,12 +7,75 @@
     tools:context=".EventShowActivity">
 
     <TextView
-        android:id="@+id/tvId"
+
+        android:id="@+id/tvUsNamEvSh"
+        android:layout_width="215dp"
+        android:layout_height="24dp"
+        android:text="Host Name"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/profPicEvSh"
+        app:layout_constraintTop_toBottomOf="@+id/Host" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profPicEvSh"
+        android:layout_width="83dp"
+        android:layout_height="79dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/Host"
+        android:layout_width="179dp"
+        android:layout_height="27dp"
+        android:layout_marginTop="12dp"
+        android:text="Host:"
+        app:layout_constraintStart_toStartOf="@+id/tvUsNamEvSh"
+        app:layout_constraintTop_toTopOf="@+id/profPicEvSh" />
+
+    <TextView
+        android:id="@+id/tvNameEvSh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginTop="8dp"
+        android:text="Event Name"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profPicEvSh" />
+
+    <TextView
+        android:id="@+id/tvDesEvSh"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        app:layout_constraintEnd_toEndOf="@+id/tvNameEvSh"
+        app:layout_constraintStart_toStartOf="@+id/tvNameEvSh"
+        app:layout_constraintTop_toBottomOf="@+id/tvNameEvSh" />
+
+    <Button
+        android:id="@+id/btnAplEvSh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aplikuj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDesEvSh" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/UserAdapter"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/browser_actions_context_menu_max_width"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAplEvSh"
+        app:layout_constraintVertical_bias="0.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

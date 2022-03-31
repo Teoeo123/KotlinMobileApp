@@ -1,26 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/eventRow"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+    android:layout_marginHorizontal="15dp"
+    android:layout_marginTop="5dp"
     app:cardBackgroundColor="#303030"
+
+    android:outlineSpotShadowColor="@color/ic_launcher_background"
     app:cardCornerRadius="12dp"
-    app:cardElevation="3dp"
-    app:contentPadding="4dp">
+    app:cardElevation="5dp"
+    android:background="@drawable/gradient_background"
+    app:contentPadding="1dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+android:paddingRight="2dp"
+
         android:padding="16dp">
 
-        <ImageView
+        <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:ignore="MissingConstraints">
+
+        </RelativeLayout>
+
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/eventImg"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:paddingRight="10dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,11 +59,31 @@
         <TextView
             android:id="@+id/eDes"
             android:layout_width="236dp"
+            android:layout_marginRight="20dp"
             android:layout_height="wrap_content"
             android:text="Opis"
             android:textColor="#787878"
             app:layout_constraintLeft_toRightOf="@+id/eventImg"
             app:layout_constraintTop_toBottomOf="@+id/eName" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:id="@+id/pBar"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:progressTint="@color/white"
+            android:progressDrawable="@drawable/circle"
+            style="?android:progressBarStyleHorizontal"
+            android:indeterminateTint="@color/ic_launcher_background"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/eventImg"
+            app:layout_constraintStart_toStartOf="@+id/eventImg"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
