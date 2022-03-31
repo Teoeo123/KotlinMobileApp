@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
+
         <ImageView
             android:id="@+id/eventImg"
             android:layout_width="100dp"
