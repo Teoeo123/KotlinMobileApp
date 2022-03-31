@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var user: FirebaseAuth
 
@@ -18,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fullScreen(window)
@@ -63,5 +65,12 @@ class MainActivity : AppCompatActivity() {
                             }
         }
     }
+    override fun onBackPressed() {
+        user.signOut()
+
+        finishAffinity()
+    }
 }
+
+
 
