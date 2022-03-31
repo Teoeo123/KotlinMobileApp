@@ -1,46 +1,65 @@
 package com.example.profeska
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.profeska.databinding.ActivityLogoutBinding
+
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class LogoutActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityLogoutBinding
+    private lateinit var binding: ActivityLogoutBinding
     private lateinit var user: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding= ActivityLogoutBinding.inflate(layoutInflater)
+        binding = ActivityLogoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fullScreen(window)
         user = FirebaseAuth.getInstance()
 
+        val profileFragment = Fragment1()
+        val addFragment = AddFragment()
+        val homeFragment = HomeFragment()
 
-        if(user.currentUser !=null){
-            user.currentUser?.let {
+        makeCurrentFragment(homeFragment)
 
-                binding.tvUserEmail.text = it.email
-                binding.tvUID.text = it.uid
+        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.ic_profile -> makeCurrentFragment(profileFragment)
+                R.id.ic_home -> makeCurrentFragment(homeFragment)
+                R.id.ic_party -> makeCurrentFragment(addFragment)
             }
+            true
         }
 
 
-        binding.btnSignOut.setOnClickListener {
-            user.signOut()
-            startActivity(Intent(this,MainActivity::class.java))
-            finish()
+
+
+      /*  binding.btnProfil.setOnClickListener {
+            replaceFragment(Fragment1())
+        }*/
+    }
+    private fun makeCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fragmentContainer,fragment)
+            commit()
         }
 
-        binding.btnProfil.setOnClickListener {
-            startActivity(Intent(this,ProfilActivity::class.java))
-        }
+    private fun replaceFragment(fragment: Fragment) {
 
-        binding.btnEvent.setOnClickListener {
-            startActivity(Intent(this,EventsActivity::class.java))
-        }
+            val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.fragmentContainer,fragment)
+        fragmentTransaction.commit()
+
 
     }
+
 }
+
+

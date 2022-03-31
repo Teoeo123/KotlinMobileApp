@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:background="@drawable/gradient_background"
+    android:layout_height="match_parent"
+    tools:context=".AddFragment">
+
+    <EditText
+        android:id="@+id/eventName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp"
+        android:ems="10"
+        android:textColorHint="@color/white"
+        android:hint="Nazwa Eventu"
+        android:autofillHints="name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/eventDes"
+        android:layout_width="282dp"
+        android:layout_height="108dp"
+        android:ems="10"
+        android:textColorHint="@color/white"
+        android:gravity="start|top"
+        android:hint="Opis"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="@+id/eventName"
+        app:layout_constraintTop_toBottomOf="@+id/eventName" />
+
+    <EditText
+        android:id="@+id/eventSlots"
+        android:layout_width="93dp"
+        android:layout_height="42dp"
+        android:ems="10"
+        android:hint="ilosc osób"
+        android:textColorHint="@color/white"
+        android:inputType="phone"
+        app:layout_constraintStart_toStartOf="@+id/eventDes"
+        app:layout_constraintTop_toBottomOf="@+id/eventDes" />
+
+    <EditText
+        android:id="@+id/eventCity"
+        android:layout_width="wrap_content"
+        android:textColorHint="@color/white"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Miasto"
+
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/eventSlots"
+        app:layout_constraintTop_toBottomOf="@+id/eventSlots" />
+
+    <EditText
+        android:id="@+id/eventStreet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColorHint="@color/white"
+        android:hint="Ulica"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/eventCity"
+        app:layout_constraintTop_toBottomOf="@+id/eventCity" />
+
+    <EditText
+        android:id="@+id/eventNr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nr. mieszkania"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/eventStreet"
+        app:layout_constraintTop_toBottomOf="@+id/eventStreet" />
+
+    <ImageView
+        android:id="@+id/imgEdit"
+        android:layout_width="117dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/eventName"
+        app:layout_constraintStart_toStartOf="@+id/eventName"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <LinearLayout
+        android:layout_width="266dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventNr">
+
+        <Button
+            android:id="@+id/btnzatw"
+            android:layout_width="wrap_content"
+            android:backgroundTint="#4CAF50"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Zatwierdz" />
+
+        <Button
+            android:id="@+id/btnodr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#C10C0C"
+            android:text="Odrzuć" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
