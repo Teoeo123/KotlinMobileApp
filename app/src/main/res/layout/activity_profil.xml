@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".ProfilActivity">
 
 
@@ -21,6 +22,7 @@
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:text="Nazwisko"
+        android:textColor="@color/button"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/txtImieP"
         app:layout_constraintStart_toStartOf="@+id/txtImieP"
@@ -31,6 +33,7 @@
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:text="numer"
+        android:textColor="@color/button"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/txtNazwiP"
         app:layout_constraintStart_toStartOf="@+id/txtNazwiP"
@@ -41,6 +44,7 @@
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:text="miasto"
+        android:textColor="@color/button"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/txtNumP"
         app:layout_constraintStart_toStartOf="@+id/txtNumP"
@@ -51,6 +55,7 @@
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:text="płeć"
+        android:textColor="@color/button"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/txtNumP"
         app:layout_constraintHorizontal_bias="0.0"
@@ -62,6 +67,7 @@
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:text="Imie"
+        android:textColor="@color/button"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
@@ -73,7 +79,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="60dp"
+        android:backgroundTint="@color/button"
         android:text="Edytuj Profil"
+        android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
