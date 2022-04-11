@@ -3,11 +3,8 @@ package com.example.profeska
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.profeska.databinding.ActivityLogoutBinding
 
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class LogoutActivity : AppCompatActivity() {
@@ -25,6 +22,7 @@ class LogoutActivity : AppCompatActivity() {
         val profileFragment = Fragment1()
         val addFragment = AddFragment()
         val homeFragment = HomeFragment()
+        val notificationFragment = NotificationFragment()
 
         makeCurrentFragment(homeFragment)
 
@@ -32,7 +30,8 @@ class LogoutActivity : AppCompatActivity() {
             when(it.itemId){
                 R.id.ic_profile -> makeCurrentFragment(profileFragment)
                 R.id.ic_home -> makeCurrentFragment(homeFragment)
-                R.id.ic_party -> makeCurrentFragment(addFragment)
+                R.id.ic_add -> makeCurrentFragment(addFragment)
+                R.id.ic_noti ->makeCurrentFragment(notificationFragment)
             }
             true
         }
@@ -56,7 +55,6 @@ class LogoutActivity : AppCompatActivity() {
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.fragmentContainer,fragment)
         fragmentTransaction.commit()
-
 
     }
 

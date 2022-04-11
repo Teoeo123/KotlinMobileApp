@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.profeska.databinding.FragmentAddBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
@@ -54,14 +55,6 @@ class AddFragment : Fragment(R.layout.fragment_add) {
             startActivity(Intent(activity,LogoutActivity::class.java))
         }
 
-
-
-
-
-
-
-
-
         return binding.root
 
     }
@@ -78,7 +71,8 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         val nr=binding.eventNr.text.toString()
         val photo="$id$name"
         val data=DatabaseEvent(name,desc,slots,city,street,nr,photo)
-        myRef.child("$id").child("$name").setValue(data)
+        var events :List<DataSnapshot>
+        myRef.child("$id").push().setValue(name)
         allRef.child("$photo").setValue(data)
         return name
     }

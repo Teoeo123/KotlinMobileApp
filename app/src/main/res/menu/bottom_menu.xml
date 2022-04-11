@@ -11,6 +11,10 @@
         android:id="@+id/ic_profile"/>
 
     <item android:title="Utwórz"
-        android:id="@+id/ic_party"
+        android:id="@+id/ic_add"
         android:icon="@drawable/party_selector"/>
+    <item
+        android:id="@+id/ic_noti"
+        android:icon="@drawable/notification_selector"
+        android:title="Powiadomienia" />
 </menu>

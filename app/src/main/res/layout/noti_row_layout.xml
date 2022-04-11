@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notiEventRow"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="15dp"
+    android:layout_marginTop="5dp"
+    app:cardBackgroundColor="#303030"
+    android:outlineSpotShadowColor="@color/ic_launcher_background"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="5dp"
+    android:background="@drawable/gradient_background"
+    app:contentPadding="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notiRelativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingRight="2dp"
+        android:padding="16dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/notiImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:paddingRight="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/notiNick"
+            android:layout_width="236dp"
+            android:layout_height="wrap_content"
+            android:text="Imie"
+            android:textColor="#EFEFEF"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/notiImg"
+            app:layout_constraintTop_toTopOf="@+id/notiImg" />
+
+        <TextView
+            android:id="@+id/notiDes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="chce dołączyć do: "
+            android:textColor="#787878"
+            app:layout_constraintStart_toStartOf="@+id/notiNick"
+            app:layout_constraintTop_toBottomOf="@+id/notiNick" />
+
+        <TextView
+            android:id="@+id/notiPartyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event"
+            android:textColor="#787878"
+            app:layout_constraintStart_toEndOf="@+id/notiDes"
+            app:layout_constraintTop_toTopOf="@+id/notiDes"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:id="@+id/notiLinLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/notiDes"
+            app:layout_constraintTop_toBottomOf="@+id/notiDes"
+            android:alpha="0">
+
+            <Button
+                android:id="@+id/notiAcept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Akceptuj"
+                />
+
+            <Button
+                android:id="@+id/notiDiscard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Odrzuć"
+                />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

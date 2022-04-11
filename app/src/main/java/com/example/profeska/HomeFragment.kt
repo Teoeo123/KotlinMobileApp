@@ -2,6 +2,7 @@ package com.example.profeska
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 
@@ -45,6 +46,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                     val newRow = i.getValue(DatabaseEvent::class.java)
                     listOfItems.add(newRow!!)
                 }
+                Log.d("ARRAY_TEST", listOfItems.size.toString())
                 setUpAdapter(listOfItems)
 
             }
