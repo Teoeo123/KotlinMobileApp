@@ -2,15 +2,20 @@ package com.example.profeska
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.profeska.databinding.ActivityLogoutBinding
 
 import com.google.firebase.auth.FirebaseAuth
+import kotlin.system.exitProcess
 
 class LogoutActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLogoutBinding
     private lateinit var user: FirebaseAuth
+    lateinit var backToast:Toast
+    private var backPressedTime:Long = 0
+    val homeFragment = HomeFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,7 +26,6 @@ class LogoutActivity : AppCompatActivity() {
 
         val profileFragment = Fragment1()
         val addFragment = AddFragment()
-        val homeFragment = HomeFragment()
         val notificationFragment = NotificationFragment()
 
         makeCurrentFragment(homeFragment)
@@ -58,6 +62,32 @@ class LogoutActivity : AppCompatActivity() {
 
     }
 
+    override fun onBackPressed() {
+
+
+
+        backToast =  Toast.makeText(this, "Wciśnij wstecz jeszcze raz, aby zamknąć aplikacje", Toast.LENGTH_LONG)
+        if (backPressedTime + 2000 > System.currentTimeMillis()) {
+            backToast.cancel()
+            super.onBackPressed()
+            finishAffinity()
+
+            exitProcess(0)
+
+        } else {
+            binding.bottomNavigation.setSelectedItemId(R.id.ic_home);
+
+            makeCurrentFragment(homeFragment)
+            backToast.show()
+        }
+        backPressedTime = System.currentTimeMillis()
+
+
+
+    }
+
 }
+
+
 
 
