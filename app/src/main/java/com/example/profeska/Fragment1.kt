@@ -9,15 +9,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-
 import android.widget.Toast
-
 import androidx.fragment.app.Fragment
 import com.example.profeska.databinding.Fragment1Binding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
+import com.handyopnion.LoadingScreen
 import java.io.File
 
 
@@ -39,7 +38,7 @@ class Fragment1 : Fragment(R.layout.fragment1) {
 
         ): View? {
             _binding = Fragment1Binding.inflate(layoutInflater, container, false)
-
+            LoadingScreen.displayLoadingWithText(activity,"Please wait...",false)
 
 
 
@@ -56,6 +55,7 @@ class Fragment1 : Fragment(R.layout.fragment1) {
                 val bitmap =BitmapFactory.decodeFile(localFile.absolutePath)
                 Log.d("ProfPic","Success")
                 binding.imgProfPic.setImageBitmap(bitmap)
+                LoadingScreen.hideLoading()
             }.addOnFailureListener{
                 storageRef.getFile(localFile).addOnSuccessListener {
                     val bitmap =BitmapFactory.decodeFile(localFile.absolutePath)
@@ -67,7 +67,9 @@ class Fragment1 : Fragment(R.layout.fragment1) {
             }
 
             binding.btnEditProfP.setOnClickListener{
+
                 startActivity(Intent(activity,ProfilEditActivity::class.java))
+
             }
 
             binding.btnLogout.setOnClickListener{
@@ -148,6 +150,7 @@ class Fragment1 : Fragment(R.layout.fragment1) {
     }
 
     }
+
 
 
 

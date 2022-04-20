@@ -11,6 +11,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
+import com.handyopnion.LoadingScreen
+import com.handyopnion.LoadingScreen.hideLoading
+import kotlinx.coroutines.delay
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -24,10 +27,14 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
 
     override fun onCreateView(
+
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+
+    ): View?  {
+       // LoadingScreen.displayLoadingWithText(activity,"Please wait...",false)
         _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
+
 
 
 
@@ -49,17 +56,31 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 Log.d("ARRAY_TEST", listOfItems.size.toString())
                 setUpAdapter(listOfItems)
 
+
+
+
             }
             override fun onCancelled(databaseError: DatabaseError) {
 
             }
-        })
+
+        }  )
+
+
         return binding.root
+
 
     }
 
     private fun setUpAdapter(arrayData: ArrayList<DatabaseEvent>){
+
+
+
         binding.recyclerView.adapter = MyAdapter(arrayData)
+
+
+
+
     }
 
 

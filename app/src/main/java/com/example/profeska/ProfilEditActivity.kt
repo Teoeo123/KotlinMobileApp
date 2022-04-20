@@ -15,6 +15,7 @@ import android.view.WindowManager
 import android.widget.RadioButton
 import android.widget.Toast
 import androidx.core.app.ActivityCompat.startActivityForResult
+import androidx.fragment.app.FragmentManager
 import com.example.profeska.databinding.ActivityProfilEditBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -163,6 +164,7 @@ class ProfilEditActivity : AppCompatActivity() {
             selectImage()
         }
 
+
     }
 
     private fun editProfile() {
@@ -219,6 +221,8 @@ class ProfilEditActivity : AppCompatActivity() {
             uploadImage()
         }
 
+
+
     }
 
 
@@ -256,6 +260,10 @@ class ProfilEditActivity : AppCompatActivity() {
             Log.d("TEST", "$imageUri")
         }
     }
+
+
+
+
 
 }
 

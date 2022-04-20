@@ -64,6 +64,11 @@ class MainActivity : AppCompatActivity() {
                             }
         }
     }
+    override fun onBackPressed() {
+        user.signOut()
+
+        finishAffinity()
+    }
 }
 
 

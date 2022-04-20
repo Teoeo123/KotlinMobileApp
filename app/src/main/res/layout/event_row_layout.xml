@@ -21,9 +21,22 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-android:paddingRight="2dp"
+
 
         android:padding="16dp">
+
+        <RelativeLayout
+            android:id="@+id/loadingPanel"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            tools:ignore="MissingConstraints">
+
+        </RelativeLayout>
+
+
+
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/eventImg"
@@ -52,6 +65,21 @@ android:paddingRight="2dp"
             android:textColor="#787878"
             app:layout_constraintLeft_toRightOf="@+id/eventImg"
             app:layout_constraintTop_toBottomOf="@+id/eName" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:id="@+id/pBar"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:progressTint="@color/white"
+            android:progressDrawable="@drawable/circle"
+            style="?android:progressBarStyleHorizontal"
+            android:indeterminateTint="@color/ic_launcher_background"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/eventImg"
+            app:layout_constraintStart_toStartOf="@+id/eventImg"
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
