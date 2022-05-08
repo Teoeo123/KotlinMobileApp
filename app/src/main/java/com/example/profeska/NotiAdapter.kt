@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.Intent.ACTION_VIEW
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.util.Half.toFloat
 import android.util.Log
 import android.view.LayoutInflater
@@ -58,13 +59,24 @@ class NotiAdapter(private val dataArray: ArrayList<WaitingClass>): RecyclerView.
         holder.accept.setOnClickListener {
             ref.child("$eventUid").child("waiting").child("$acceptUid").removeValue()
             ref.child("$eventUid").child("accepted").child("$acceptUid").setValue(acceptUid)
-
+            holder.accept.isClickable = false
+            holder.discard.isClickable = false
+            holder.linLayout.alpha=0.toFloat()
+            holder.info.text="zaakceptowany"
+            holder.info.setTextColor(Color.parseColor("#02DE61"))
+            holder.info.alpha=1.toFloat()
 
         }
 
         holder.discard.setOnClickListener {
             ref.child("$eventUid").child("waiting").child("$acceptUid").removeValue()
             ref.child("$eventUid").child("rejected").child("$acceptUid").setValue(acceptUid)
+            holder.accept.isClickable = false
+            holder.discard.isClickable = false
+            holder.linLayout.alpha=0.toFloat()
+            holder.info.text="odrzucony"
+            holder.info.setTextColor(Color.parseColor("#DE0B2C"))
+            holder.info.alpha=1.toFloat()
         }
 
     }
@@ -79,4 +91,5 @@ class NotiViewHolder(private val view: View): RecyclerView.ViewHolder(view)
     val linLayout= view.findViewById(R.id.notiLinLayout) as LinearLayout
     val accept=view.findViewById(R.id.notiAcept) as Button
     val discard=view.findViewById(R.id.notiDiscard) as Button
+    val info=view.findViewById(R.id.tv_ac_info) as TextView
 }

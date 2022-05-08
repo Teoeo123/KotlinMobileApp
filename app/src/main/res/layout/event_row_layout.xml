@@ -25,6 +25,21 @@ android:paddingRight="2dp"
 
         android:padding="16dp">
 
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:id="@+id/pBar"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:progressTint="@color/white"
+            android:progressDrawable="@drawable/circle"
+            style="?android:progressBarStyleHorizontal"
+            android:indeterminateTint="@color/ic_launcher_background"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/eventImg"
+            app:layout_constraintStart_toStartOf="@+id/eventImg"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/eventImg"
             android:layout_width="100dp"

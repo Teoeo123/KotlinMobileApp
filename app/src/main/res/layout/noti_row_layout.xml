@@ -83,7 +83,21 @@
                 android:layout_weight="1"
                 android:text="Odrzuć"
                 />
+
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_ac_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Information"
+            android:alpha="0"
+            android:textColor="#02DE61"
+            app:layout_constraintBottom_toBottomOf="@+id/notiLinLayout"
+            app:layout_constraintEnd_toEndOf="@+id/notiLinLayout"
+            app:layout_constraintStart_toStartOf="@+id/notiLinLayout"
+            app:layout_constraintTop_toTopOf="@+id/notiLinLayout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

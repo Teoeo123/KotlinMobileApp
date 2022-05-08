@@ -57,6 +57,7 @@
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/drawable/ic_party.xml" value="0.2485" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/drawable/ic_party_selected.xml" value="0.2485" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/drawable/ic_personname.xml" value="0.278" />
+        <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/drawable/ic_phone.xml" value="0.28" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/drawable/ic_user.xml" value="0.278" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/drawable/ic_user_selected.xml" value="0.278" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/drawable/ic_venus.xml" value="0.278" />
@@ -69,6 +70,7 @@
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_glowne.xml" value="0.24003623188405798" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_logout.xml" value="0.33" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_main.xml" value="0.358695652173913" />
+        <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_party_accept.xml" value="0.25" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_pop_up_accept.xml" value="0.22916666666666666" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_profil.xml" value="0.33" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/activity_profil_edit.xml" value="0.25" />
@@ -81,7 +83,7 @@
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/my_event_row_layout.xml" value="0.45308310991957107" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/noti_row_layout.xml" value="0.5" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/notific.xml" value="0.24003623188405798" />
-        <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/user_row_layout.xml" value="0.2296875" />
+        <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/layout/user_row_layout.xml" value="0.33" />
         <entry key="..\:/Users/Teoeo/AndroidStudioProjects/AplikacjaTelefon/app/src/main/res/menu/bottom_menu.xml" value="0.2734375" />
       </map>
     </option>

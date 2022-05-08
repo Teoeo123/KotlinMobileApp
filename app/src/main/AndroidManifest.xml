@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Profeska">
         <activity
+            android:name=".PartyAcceptActivity"
+            android:exported="false" />
+        <activity
             android:name=".PopUpAccept"
             android:exported="false" />
         <activity
