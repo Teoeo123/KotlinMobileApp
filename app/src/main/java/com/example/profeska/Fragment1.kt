@@ -22,9 +22,6 @@ import java.io.File
 
 class Fragment1 : Fragment(R.layout.fragment1) {
 
-
-
-
         private var _binding: Fragment1Binding? = null
         private val binding
         get() = _binding!!
@@ -34,8 +31,6 @@ class Fragment1 : Fragment(R.layout.fragment1) {
         override fun onCreateView(
             inflater: LayoutInflater,container: ViewGroup?,
             savedInstanceState: Bundle?
-
-
         ): View? {
             _binding = Fragment1Binding.inflate(layoutInflater, container, false)
             LoadingScreen.displayLoadingWithText(activity,"Please wait...",false)

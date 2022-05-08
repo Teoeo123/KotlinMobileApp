@@ -20,30 +20,47 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/userRowLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingRight="2dp"
+        android:layout_height="79dp"
+        android:padding="16dp"
 
-        android:padding="16dp">
+        android:paddingRight="2dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/userImg"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="58dp"
+            android:layout_height="51dp"
             android:paddingRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvNameU"
-            android:layout_width="236dp"
-            android:layout_height="wrap_content"
+            android:layout_width="187dp"
+            android:layout_height="27dp"
             android:text="Nazwa"
             android:textColor="#EFEFEF"
-            android:textSize="30sp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/userImg"
             app:layout_constraintLeft_toRightOf="@+id/userImg"
             app:layout_constraintTop_toTopOf="@+id/userImg"
             app:layout_constraintVertical_bias="0.506" />
+
+        <ProgressBar
+            android:id="@+id/pBar"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/ic_launcher_background"
+            android:progressDrawable="@drawable/circle"
+            android:progressTint="@color/white"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/userImg"
+            app:layout_constraintStart_toStartOf="@+id/userImg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

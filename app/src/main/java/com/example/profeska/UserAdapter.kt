@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -46,6 +47,8 @@ class UserAdapter(private val dataArray: ArrayList<String>): RecyclerView.Adapte
         storageRef.getFile(localFile).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
             holder.pic.setImageBitmap(bitmap)
+            holder.pbar.alpha=0.toFloat()
+
         }
 
     }
@@ -58,6 +61,7 @@ class UserAdapter(private val dataArray: ArrayList<String>): RecyclerView.Adapte
 
 class UserViewHolder(private val view: View): RecyclerView.ViewHolder(view)
 {
+    val pbar = view.findViewById(R.id.pBar) as ProgressBar
     val name=view.findViewById(R.id.tvNameU) as TextView
     val pic=view.findViewById(R.id.userImg) as ImageView
     val click=view.findViewById(R.id.userRowLayout) as ConstraintLayout

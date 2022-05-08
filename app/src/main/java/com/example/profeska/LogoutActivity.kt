@@ -1,26 +1,20 @@
 package com.example.profeska
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import com.example.profeska.databinding.ActivityLogoutBinding
 
 import com.google.firebase.auth.FirebaseAuth
-import com.handyopnion.LoadingScreen
-import com.handyopnion.LoadingScreen.hideLoading
-import com.mikhaellopez.circularprogressbar.CircularProgressBar
 import kotlin.system.exitProcess
 
 class LogoutActivity : AppCompatActivity() {
 
-
-    lateinit var backToast:Toast
-    private var backPressedTime:Long = 0
     private lateinit var binding: ActivityLogoutBinding
     private lateinit var user: FirebaseAuth
+    lateinit var backToast:Toast
+    private var backPressedTime:Long = 0
     val homeFragment = HomeFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,14 +26,9 @@ class LogoutActivity : AppCompatActivity() {
 
         val profileFragment = Fragment1()
         val addFragment = AddFragment()
-
         val notificationFragment = NotificationFragment()
 
-
-
-
         makeCurrentFragment(homeFragment)
-
 
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
@@ -61,9 +50,6 @@ class LogoutActivity : AppCompatActivity() {
     private fun makeCurrentFragment(fragment: Fragment) =
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.fragmentContainer,fragment)
-
-
-            addToBackStack(null)
             commit()
         }
 
@@ -101,5 +87,7 @@ class LogoutActivity : AppCompatActivity() {
     }
 
 }
+
+
 
 
