@@ -28,6 +28,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
     private lateinit var allRef: DatabaseReference
     private lateinit var user: FirebaseAuth
     private lateinit var imageUri: Uri
+    private var img: Boolean=false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,15 +41,23 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         myRef = firebase.getReference("events").child("users")
         allRef = firebase.getReference("events").child("all")
 
-
         binding.imgEdit.setOnClickListener{
             selectImage()
         }
 
         binding.btnzatw.setOnClickListener {
-            val n=sendToBase()
-            if(imageUri!=null) uploadImage(n)
-            startActivity(Intent(activity,LogoutActivity::class.java))
+
+            if(img)
+            {
+                val n=sendToBase()
+                uploadImage(n)
+                startActivity(Intent(activity,LogoutActivity::class.java))
+            }
+            else
+            {
+                selectImage()
+            }
+
         }
 
         binding.btnodr.setOnClickListener {
@@ -110,6 +119,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
         if (requestCode ==100 && resultCode == AppCompatActivity.RESULT_OK){
             imageUri = data?.data!!
             binding.imgEdit.setImageURI(imageUri)
+            img=true
             Log.d("TEST","$imageUri")
         }
     }

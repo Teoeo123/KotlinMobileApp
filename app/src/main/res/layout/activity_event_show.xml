@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
     tools:context=".EventShowActivity">
 
     <TextView
@@ -11,7 +12,9 @@
         android:id="@+id/tvUsNamEvSh"
         android:layout_width="215dp"
         android:layout_height="24dp"
+        android:layout_marginStart="28dp"
         android:text="Host Name"
+        android:textColor="@color/button"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/profPicEvSh"
         app:layout_constraintTop_toBottomOf="@+id/Host" />
@@ -32,7 +35,8 @@
         android:layout_width="179dp"
         android:layout_height="27dp"
         android:layout_marginTop="12dp"
-        android:text="Host:"
+        android:text="Organizator:"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="@+id/tvUsNamEvSh"
         app:layout_constraintTop_toTopOf="@+id/profPicEvSh" />
 
@@ -40,21 +44,29 @@
         android:id="@+id/tvNameEvSh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:text="Event Name"
-        android:textSize="20sp"
+        android:fontFamily="@font/bebas"
+        android:textColor="@color/ic_launcher_background"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profPicEvSh" />
 
     <TextView
         android:id="@+id/tvDesEvSh"
-        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="36dp"
         android:text="Description"
+        android:textSize="16dp"
+
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/tvNameEvSh"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="@+id/tvNameEvSh"
         app:layout_constraintTop_toBottomOf="@+id/tvNameEvSh" />
 
@@ -62,20 +74,41 @@
         android:id="@+id/btnAplEvSh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:text="Aplikuj"
+        android:background="@color/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+
         app:layout_constraintTop_toBottomOf="@+id/tvDesEvSh" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/UserAdapter"
+        android:paddingTop="2dp"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/browser_actions_context_menu_max_width"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAplEvSh"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/opis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Opis:"
+        android:textColor="#BCBCBC"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/tvDesEvSh"
+        app:layout_constraintEnd_toStartOf="@+id/tvNameEvSh"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profPicEvSh"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

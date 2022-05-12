@@ -3,6 +3,8 @@ package com.example.profeska
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Patterns
 import android.widget.Toast
 import com.example.profeska.databinding.ActivityRegisterBinding
@@ -77,9 +79,20 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(this, "Pomyślnie zarejestrowano XDDD", Toast.LENGTH_SHORT).show()
 
 
+                    binding.logo.animate().apply {
+                        duration = 1000
+                        rotationYBy(360f)
+                    }
 
-                    startActivity(Intent(this, LogoutActivity::class.java))
-                    finish()
+
+                    Handler(Looper.getMainLooper()).postDelayed(
+                        {
+                            startActivity(Intent(this, LogoutActivity::class.java))
+                            finish()
+                        },
+                         2000// value in milliseconds
+                    )
+
 
 
                 }
@@ -88,5 +101,6 @@ class RegisterActivity : AppCompatActivity() {
             }
     }
 }
+
 
 

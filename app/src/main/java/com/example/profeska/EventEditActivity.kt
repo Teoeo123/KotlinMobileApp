@@ -47,7 +47,7 @@ class EventEditActivity : AppCompatActivity() {
         binding.btnodr.setOnClickListener {
             startActivity(Intent(this,LogoutActivity::class.java))
         }
-
+        fullScreen(window)
 
     }
 
