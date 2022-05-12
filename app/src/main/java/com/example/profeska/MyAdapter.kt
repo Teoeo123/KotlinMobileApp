@@ -32,6 +32,7 @@ class MyAdapter(private val dataArray: ArrayList<DatabaseEvent>): RecyclerView.A
         val photo = dataArray[holder.adapterPosition].photo
         holder.name.text=dataArray[holder.adapterPosition].name
         holder.des.text=dataArray[holder.adapterPosition].description
+        holder.city.text=dataArray[holder.adapterPosition].city
         val storageRef= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("events/$photo")
         val localFile = File.createTempFile("temp","png")
         if(dataArray[holder.adapterPosition].date.toString()!="null"){
@@ -77,4 +78,5 @@ class MyViewHolder(private val view: View): RecyclerView.ViewHolder(view)
     val time=view.findViewById(R.id.tvShowTime) as TextView
     val date=view.findViewById(R.id.tvShowDate) as TextView
     val pbar=view.findViewById(R.id.pBar) as ProgressBar
+    val city=view.findViewById(R.id.tvCity) as TextView
 }

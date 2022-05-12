@@ -11,6 +11,7 @@
     android:layout_marginTop="5dp"
     app:cardBackgroundColor="#303030"
     app:cardElevation="5dp"
+
     android:outlineSpotShadowColor="@color/ic_launcher_background"
     app:cardCornerRadius="12dp"
 
@@ -31,14 +32,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
+
             android:indeterminateTint="@color/ic_launcher_background"
             android:progressDrawable="@drawable/circle"
             android:progressTint="@color/white"
 
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/eventImg"
             app:layout_constraintEnd_toEndOf="@+id/eventImg"
             app:layout_constraintStart_toStartOf="@+id/eventImg"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/eventImg" />
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/eventImg"
@@ -46,7 +48,7 @@
             android:layout_height="100dp"
             android:paddingRight="10dp"
 
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/tvCity"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -54,12 +56,11 @@
             android:id="@+id/eName"
             android:layout_width="174dp"
             android:layout_height="30dp"
-android:textStyle="bold"
             android:paddingLeft="2dp"
             android:text="Nazwa"
-
             android:textColor="#EFEFEF"
             android:textSize="20sp"
+            android:textStyle="bold"
 
             app:layout_constraintBottom_toTopOf="@id/eDes"
             app:layout_constraintLeft_toRightOf="@+id/eventImg"
@@ -69,13 +70,12 @@ android:textStyle="bold"
             android:id="@+id/eDes"
             android:layout_width="236dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="2dp"
-            android:text="Opis"
             android:ellipsize="end"
             android:maxLines="4"
-            android:layout_marginBottom="4dp"
+            android:paddingLeft="2dp"
+            android:text="Opis"
             android:textColor="#787878"
-            app:layout_constraintBottom_toTopOf="@+id/tvShowDate"
+
             app:layout_constraintLeft_toRightOf="@+id/eventImg"
             app:layout_constraintTop_toBottomOf="@+id/eName"
             app:layout_constraintVertical_bias="0.0" />
@@ -84,21 +84,23 @@ android:textStyle="bold"
             android:id="@+id/tvShowTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
             android:layout_marginEnd="24dp"
             android:drawableLeft="@drawable/ic_time"
             android:drawablePadding="5dp"
             android:drawableTint="#B3B1AD"
             android:fontFamily="@font/bebas"
             android:text="20:00"
+
             android:textColor="@color/ic_launcher_background"
-
             android:textSize="20dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvShowDate"
 
+            app:layout_constraintBottom_toBottomOf="@+id/tvShowDate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/eventImg"
-            app:layout_constraintTop_toTopOf="@+id/tvShowDate" />
+            app:layout_constraintStart_toEndOf="@+id/tvShowDate"
+            app:layout_constraintTop_toTopOf="@+id/tvShowDate"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvShowDate"
@@ -106,15 +108,37 @@ android:textStyle="bold"
             android:layout_height="wrap_content"
 
 
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
             android:drawableLeft="@drawable/ic_date"
-
             android:drawablePadding="5dp"
+
             android:drawableTint="#B3B1AD"
             android:text="\??/??/?? ??:??"
             android:textColor="@color/ic_launcher_background"
             android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvCity"
+            app:layout_constraintEnd_toStartOf="@+id/tvShowTime"
+            app:layout_constraintStart_toEndOf="@+id/tvCity" />
+
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="24dp"
+            android:drawableLeft="@drawable/ic_city"
+            android:drawablePadding="5dp"
+            android:drawableTint="#B3B1AD"
+            android:text="Łódź"
+            android:textColor="@color/ic_launcher_background"
+            android:textSize="15dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/eventImg"
-            app:layout_constraintStart_toEndOf="@+id/eventImg"
+            app:layout_constraintEnd_toStartOf="@+id/tvShowDate"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/eventImg" />
 
 

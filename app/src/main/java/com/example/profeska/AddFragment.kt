@@ -7,8 +7,6 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +22,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
+
 
 
 class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetListener,
@@ -68,12 +67,21 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
 
         pickDate()
 
+
         binding.imgEdit.setOnClickListener{
             selectImage()
         }
 
         binding.btnzatw.isEnabled=false
         binding.btnzatw.imageAlpha=75
+
+
+
+
+        /*
+            Sets whether the selector wheel shown during flinging/scrolling should
+            wrap around the minimum value and maximum value.
+        */
 
 
 
@@ -101,6 +109,9 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
             startActivity(Intent(activity,LogoutActivity::class.java))
         }
 
+
+
+
         return binding.root
 
     }
@@ -124,6 +135,8 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
         val date="$savedYear${convertDate(savedMonth)}${convertDate(savedDay)}${convertDate(savedHour)}${convertDate(savedMinute)}"
         val data=DatabaseEvent(name,desc,slots,city,street,nr,photo,date)
         var events :List<DataSnapshot>
+
+
         myRef.child("$id").push().setValue(name)
         allRef.child("$photo").setValue(data)
         return name

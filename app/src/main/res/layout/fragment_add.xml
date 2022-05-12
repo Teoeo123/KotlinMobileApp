@@ -3,10 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-
     android:background="@drawable/gradient_background"
     android:layout_height="match_parent"
+
     tools:context=".AddFragment">
+
+
+
+
 
     <EditText
         android:id="@+id/eventName"
@@ -14,10 +18,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="192dp"
         android:autofillHints="name"
+        android:textColor="@color/white"
         android:ems="10"
-        android:hint="Nazwa Eventu"
+        android:textCursorDrawable="@drawable/black_cursor"
+        android:textColorHint="#F0BA26"
+        android:backgroundTint="@color/button"
         android:inputType="textPersonName"
-        android:textColorHint="@color/white"
+        android:hint="Nazwa Eventu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,23 +32,36 @@
 
     <EditText
         android:id="@+id/eventDes"
-        android:layout_width="282dp"
+        android:layout_width="wrap_content"
         android:layout_height="108dp"
         android:ems="10"
-        android:textColorHint="@color/white"
         android:gravity="start|top"
         android:hint="Opis"
+        android:textColor="@color/white"
+        android:textCursorDrawable="@drawable/black_cursor"
+        android:textColorHint="#F0BA26"
+        android:backgroundTint="@color/button"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="@+id/eventName"
         app:layout_constraintTop_toBottomOf="@+id/eventName" />
 
+
+
+
+
+
     <EditText
         android:id="@+id/eventSlots"
-        android:layout_width="93dp"
-        android:layout_height="42dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="ilosc osób"
-        android:textColorHint="@color/white"
+
+        android:textColorHint="#F0BA26"
+
+        android:backgroundTint="@color/button"
+        android:hint="Ilość osób"
+        android:textColor="@color/ic_launcher_background"
+
         android:inputType="phone"
         app:layout_constraintStart_toStartOf="@+id/eventDes"
         app:layout_constraintTop_toBottomOf="@+id/eventDes" />
@@ -49,12 +69,14 @@
     <EditText
         android:id="@+id/eventCity"
         android:layout_width="wrap_content"
-        android:textColorHint="@color/white"
+
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Miasto"
-
-        android:inputType="textPersonName"
+        android:textCursorDrawable="@drawable/black_cursor"
+        android:textColorHint="#F0BA26"
+        android:backgroundTint="@color/button"
+        android:inputType="textAutoCorrect"
         app:layout_constraintStart_toStartOf="@+id/eventSlots"
         app:layout_constraintTop_toBottomOf="@+id/eventSlots" />
 
@@ -63,8 +85,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:textColorHint="@color/white"
+
         android:hint="Ulica"
+        android:textCursorDrawable="@drawable/black_cursor"
+        android:textColorHint="#F0BA26"
+        android:backgroundTint="@color/button"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/eventCity"
         app:layout_constraintTop_toBottomOf="@+id/eventCity" />
@@ -75,8 +100,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Nr. mieszkania"
+        android:textCursorDrawable="@drawable/black_cursor"
+        android:textColorHint="#F0BA26"
+        android:backgroundTint="@color/button"
         android:inputType="textPersonName"
-        android:textColorHint="@color/white"
+
         app:layout_constraintStart_toStartOf="@+id/eventStreet"
         app:layout_constraintTop_toBottomOf="@+id/eventStreet" />
 
