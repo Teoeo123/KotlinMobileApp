@@ -9,19 +9,6 @@
     tools:context=".ProfilEditActivity">
 
 
-    <Button
-        android:id="@+id/btnCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:backgroundTint="#F44336"
-        android:text="Odrzuć"
-        app:layout_constraintEnd_toEndOf="@+id/etUserCity"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/etUserCity"
-        app:layout_constraintTop_toBottomOf="@+id/rgSex" />
-
-
     <ImageView
         android:id="@+id/profPicEdit"
         android:layout_width="300px"
@@ -51,13 +38,13 @@
     <EditText
         android:id="@+id/etUserSName"
         android:layout_width="wrap_content"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/button"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/button"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Nazwisko"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/etUserName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etUserName"
@@ -65,14 +52,14 @@
 
     <EditText
         android:id="@+id/etUserPhon"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="@color/button"
         android:ems="10"
-        android:inputType="numberDecimal"
         android:hint="Numer Telefonu"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/etUserSName"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etUserSName"
@@ -82,12 +69,12 @@
         android:id="@+id/etUserCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:textColor="@color/white"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/button"
+        android:ems="10"
         android:hint="Miasto"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/etUserPhon"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etUserPhon"
@@ -97,7 +84,7 @@
         android:id="@+id/textView"
         android:layout_width="57dp"
         android:layout_height="36dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="8dp"
         android:text="Płeć:"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -140,12 +127,46 @@
         android:id="@+id/btnAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="108dp"
         android:backgroundTint="#4CAF50"
         android:text="Zatwierdź"
         app:layout_constraintEnd_toStartOf="@+id/btnCancel"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/etUserCity"
         app:layout_constraintTop_toBottomOf="@+id/rgSex" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="108dp"
+        android:backgroundTint="#F44336"
+        android:text="Odrzuć"
+        app:layout_constraintEnd_toEndOf="@+id/etUserCity"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/etUserCity"
+        app:layout_constraintTop_toBottomOf="@+id/rgSex" />
+
+    <Button
+        android:id="@+id/btSetDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF9800"
+        android:text="Ustaw Date"
+        app:layout_constraintEnd_toEndOf="@+id/rgSex"
+        app:layout_constraintStart_toStartOf="@+id/rgSex"
+        tools:layout_editor_absoluteY="507dp" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:text="\??/??/?? ??:??"
+        app:layout_constraintEnd_toEndOf="@+id/btSetDate"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintStart_toStartOf="@+id/btSetDate"
+        app:layout_constraintTop_toBottomOf="@+id/btSetDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

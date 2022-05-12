@@ -8,4 +8,5 @@ data class DatabaseEvent(
     val street: String?=null,
     val num: String?=null,
     val photo: String?=null,
+    val date: String?=null
 )
