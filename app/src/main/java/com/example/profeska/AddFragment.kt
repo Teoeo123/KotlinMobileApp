@@ -7,6 +7,8 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -43,11 +45,13 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
     var hour=0
     var minute=0
 
-    var savedDay=0
-    var savedMonth=0
-    var savedYear=0
-    var savedHour=0
-    var savedMinute=0
+    var savedDay=-1
+    var savedMonth=-1
+    var savedYear=-1
+    var savedHour=-1
+    var savedMinute=-1
+
+
 
 
 
@@ -67,6 +71,16 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
         binding.imgEdit.setOnClickListener{
             selectImage()
         }
+
+        binding.btnzatw.isEnabled=false
+        binding.btnzatw.imageAlpha=75
+
+
+
+
+
+
+
 
         binding.btnzatw.setOnClickListener {
 
@@ -90,6 +104,11 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
         return binding.root
 
     }
+
+
+
+
+
 
 
     private fun sendToBase():String

@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -34,7 +35,12 @@ class MyAdapter(private val dataArray: ArrayList<DatabaseEvent>): RecyclerView.A
         val storageRef= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("events/$photo")
         val localFile = File.createTempFile("temp","png")
         if(dataArray[holder.adapterPosition].date.toString()!="null"){
-            holder.date.text= displayDateAndTime(dataArray[holder.adapterPosition].date.toString())
+            holder.time.text= displayFormatTime(dataArray[holder.adapterPosition].date.toString())
+        }else{
+            holder.time.alpha=0.toFloat()
+        }
+        if(dataArray[holder.adapterPosition].date.toString()!="null"){
+            holder.date.text= displayFormatDate(dataArray[holder.adapterPosition].date.toString())
         }else{
             holder.date.alpha=0.toFloat()
         }
@@ -43,6 +49,8 @@ class MyAdapter(private val dataArray: ArrayList<DatabaseEvent>): RecyclerView.A
         storageRef.getFile(localFile).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
             holder.pic.setImageBitmap(bitmap)
+            holder.pbar.alpha=0.toFloat()
+
         }
         holder.click.setOnClickListener{
             Log.d("test","klikanie działa")
@@ -66,5 +74,7 @@ class MyViewHolder(private val view: View): RecyclerView.ViewHolder(view)
     val des=view.findViewById(R.id.eDes) as TextView
     val pic=view.findViewById(R.id.eventImg) as ImageView
     val click=view.findViewById(R.id.relativeLayout) as ConstraintLayout
+    val time=view.findViewById(R.id.tvShowTime) as TextView
     val date=view.findViewById(R.id.tvShowDate) as TextView
+    val pbar=view.findViewById(R.id.pBar) as ProgressBar
 }

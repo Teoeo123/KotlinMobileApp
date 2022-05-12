@@ -10,10 +10,10 @@
     android:layout_marginHorizontal="15dp"
     android:layout_marginTop="5dp"
     app:cardBackgroundColor="#303030"
-
+    app:cardElevation="5dp"
     android:outlineSpotShadowColor="@color/ic_launcher_background"
     app:cardCornerRadius="12dp"
-    app:cardElevation="5dp"
+
     android:background="@drawable/gradient_background"
     app:contentPadding="1dp">
 
@@ -21,19 +21,19 @@
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-android:paddingRight="2dp"
+        android:padding="10dp"
 
-        android:padding="16dp">
+        android:paddingRight="2dp">
 
         <ProgressBar
-            android:layout_width="wrap_content"
             android:id="@+id/pBar"
+            style="?android:progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:indeterminate="true"
-            android:progressTint="@color/white"
-            android:progressDrawable="@drawable/circle"
-            style="?android:progressBarStyleHorizontal"
             android:indeterminateTint="@color/ic_launcher_background"
+            android:progressDrawable="@drawable/circle"
+            android:progressTint="@color/white"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/eventImg"
@@ -45,38 +45,79 @@ android:paddingRight="2dp"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:paddingRight="10dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/eName"
             android:layout_width="174dp"
-            android:layout_height="24dp"
+            android:layout_height="30dp"
+android:textStyle="bold"
+            android:paddingLeft="2dp"
             android:text="Nazwa"
+
             android:textColor="#EFEFEF"
             android:textSize="20sp"
+
+            app:layout_constraintBottom_toTopOf="@id/eDes"
             app:layout_constraintLeft_toRightOf="@+id/eventImg"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/eDes"
             android:layout_width="236dp"
-            android:layout_marginRight="20dp"
             android:layout_height="wrap_content"
+            android:paddingLeft="2dp"
             android:text="Opis"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:layout_marginBottom="4dp"
             android:textColor="#787878"
+            app:layout_constraintBottom_toTopOf="@+id/tvShowDate"
             app:layout_constraintLeft_toRightOf="@+id/eventImg"
-            app:layout_constraintTop_toBottomOf="@+id/eName" />
+            app:layout_constraintTop_toBottomOf="@+id/eName"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/tvShowTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:drawableLeft="@drawable/ic_time"
+            android:drawablePadding="5dp"
+            android:drawableTint="#B3B1AD"
+            android:fontFamily="@font/bebas"
+            android:text="20:00"
+            android:textColor="@color/ic_launcher_background"
+
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvShowDate"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/eventImg"
+            app:layout_constraintTop_toTopOf="@+id/tvShowDate" />
 
         <TextView
             android:id="@+id/tvShowDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
+
+            android:drawableLeft="@drawable/ic_date"
+
+            android:drawablePadding="5dp"
+            android:drawableTint="#B3B1AD"
             android:text="\??/??/?? ??:??"
-            android:textColor="@color/white"
-            android:textSize="9dp"
-            app:layout_constraintStart_toEndOf="@+id/eName"
-            tools:layout_editor_absoluteY="4dp" />
+            android:textColor="@color/ic_launcher_background"
+            android:textSize="15dp"
+            app:layout_constraintBottom_toBottomOf="@id/eventImg"
+            app:layout_constraintStart_toEndOf="@+id/eventImg"
+            app:layout_constraintTop_toBottomOf="@+id/eventImg" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -12,12 +12,12 @@
         android:id="@+id/eventName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
-        android:ems="10"
-        android:textColorHint="@color/white"
-        android:hint="Nazwa Eventu"
+        android:layout_marginTop="192dp"
         android:autofillHints="name"
+        android:ems="10"
+        android:hint="Nazwa Eventu"
         android:inputType="textPersonName"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,7 +88,8 @@
         app:layout_constraintBottom_toTopOf="@+id/eventName"
         app:layout_constraintStart_toStartOf="@+id/eventName"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_image" />
 
     <Button
         android:id="@+id/btSetDate"
@@ -123,13 +124,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eventNr">
 
-        <Button
+        <ImageButton
             android:id="@+id/btnzatw"
-            android:layout_width="wrap_content"
-            android:backgroundTint="#4CAF50"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Zatwierdz" />
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:src="@drawable/ic_btncheck"
+            android:text="Zatwierdz"
+            android:tint="@color/ic_launcher_background" />
 
         <Button
             android:id="@+id/btnodr"
