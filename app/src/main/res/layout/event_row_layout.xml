@@ -46,11 +46,13 @@
             android:id="@+id/eventImg"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginLeft="8dp"
+
             android:paddingRight="10dp"
 
-            app:layout_constraintBottom_toBottomOf="@id/tvCity"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/eName"
@@ -84,62 +86,67 @@
             android:id="@+id/tvShowTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
             android:drawableLeft="@drawable/ic_time"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+
             android:drawablePadding="5dp"
             android:drawableTint="#B3B1AD"
             android:fontFamily="@font/bebas"
+            android:background="@android:color/transparent"
             android:text="20:00"
-
             android:textColor="@color/ic_launcher_background"
-            android:textSize="20dp"
 
-            app:layout_constraintBottom_toBottomOf="@+id/tvShowDate"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvShowDate"
-            app:layout_constraintTop_toTopOf="@+id/tvShowDate"
+
+            app:layout_constraintTop_toTopOf="@+id/tvCity"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvShowDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
 
-
-            android:layout_marginStart="24dp"
-            android:layout_marginEnd="24dp"
             android:drawableLeft="@drawable/ic_date"
-            android:drawablePadding="5dp"
-
+            android:background="@android:color/transparent"
+            android:drawablePadding="3dp"
             android:drawableTint="#B3B1AD"
+
             android:text="\??/??/?? ??:??"
             android:textColor="@color/ic_launcher_background"
             android:textSize="15dp"
-            app:layout_constraintBottom_toBottomOf="@+id/tvCity"
-            app:layout_constraintEnd_toStartOf="@+id/tvShowTime"
-            app:layout_constraintStart_toEndOf="@+id/tvCity" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/eventImg"
+            app:layout_constraintTop_toBottomOf="@+id/eventImg"
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/tvCity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginStart="20dp"
             android:drawableLeft="@drawable/ic_city"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_centerInParent="true"
+
             android:drawablePadding="5dp"
             android:drawableTint="#B3B1AD"
             android:text="Łódź"
             android:textColor="@color/ic_launcher_background"
             android:textSize="15dp"
+
             android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/eventImg"
-            app:layout_constraintEnd_toStartOf="@+id/tvShowDate"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/eventImg" />
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvShowDate"
+            app:layout_constraintTop_toTopOf="@+id/tvShowDate" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

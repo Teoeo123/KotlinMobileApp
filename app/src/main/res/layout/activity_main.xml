@@ -30,6 +30,10 @@
         android:textColor="@color/white"
         android:backgroundTint="@color/button"
         android:ems="10"
+
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+
         android:drawableLeft="@drawable/ic_email"
         android:drawablePadding="5dp"
         android:drawableTint="@color/ic_launcher_background"
@@ -60,6 +64,10 @@
         android:inputType="textPassword"
         android:textColor="@color/white"
         android:textColorHint="#F0BA26"
+
+        android:layout_gravity="center"
+        android:layout_centerInParent="true"
+
         app:layout_constraintEnd_toEndOf="@+id/etEmail"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/etEmail"
