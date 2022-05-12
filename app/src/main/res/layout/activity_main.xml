@@ -30,6 +30,10 @@
         android:textColor="@color/white"
         android:backgroundTint="@color/button"
         android:ems="10"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/ic_launcher_background"
+        android:drawableStart="@drawable/ic_email"
         android:textCursorDrawable="@drawable/black_cursor"
 
         android:hint="@string/email"
@@ -47,6 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/ic_launcher_background"
         android:hint="@string/pass"
         android:textCursorDrawable="@drawable/black_cursor"
         android:backgroundTint="@color/button"
@@ -75,8 +82,8 @@
     <ImageView
         android:contentDescription="@string/logo"
         android:id="@+id/imageView"
-        android:layout_width="110dp"
-        android:layout_height="119dp"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
         android:rotation="-45"
 
         app:layout_constraintEnd_toEndOf="parent"

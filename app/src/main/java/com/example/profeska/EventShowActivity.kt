@@ -37,7 +37,7 @@ class EventShowActivity : AppCompatActivity() {
             startActivity(Intent(this,LogoutActivity::class.java))
             return
         }
-
+        fullScreen(window)
         user= FirebaseAuth.getInstance()
 
         val firebase= FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")

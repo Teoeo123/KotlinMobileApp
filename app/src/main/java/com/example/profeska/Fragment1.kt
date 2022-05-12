@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.handyopnion.LoadingScreen
+import com.handyopnion.LoadingScreen.hideLoading
 import java.io.File
 
 
@@ -78,7 +79,7 @@ class Fragment1 : Fragment(R.layout.fragment1) {
 
 
 
-
+            hideLoading()
 
 
 

@@ -49,8 +49,9 @@ class EventsActivity : AppCompatActivity() {
 
             }
         })
-
+        fullScreen(window)
     }
+
 
     private fun setUpAdapter(arrayData: ArrayList<DatabaseEvent>){
         binding.recyclerView.adapter = MyAdapter(arrayData)

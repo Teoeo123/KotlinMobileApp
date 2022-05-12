@@ -26,11 +26,18 @@
 
     <EditText
         android:id="@+id/reEmail"
+        android:drawableLeft="@drawable/ic_email"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/ic_launcher_background"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:ems="10"
         android:hint="Email"
+        android:textCursorDrawable="@drawable/black_cursor"
+        android:backgroundTint="@color/button"
+        android:textColor="@color/white"
+        android:textColorHint="#F0BA26"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -45,12 +52,34 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Hasło"
+        android:textCursorDrawable="@drawable/black_cursor"
+        android:backgroundTint="@color/button"
+
+        android:textColor="@color/white"
+        android:textColorHint="#F0BA26"
+        android:drawableLeft="@drawable/ic_password"
+        android:drawablePadding="5dp"
+        android:drawableTint="@color/ic_launcher_background"
         android:inputType="textPassword"
-        android:textColorHint="@color/button"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/reEmail" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="135dp"
+        android:layout_height="133dp"
+        android:tint="@color/ic_launcher_background"
+        android:alpha="0.3"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRegisterTv"
+        app:layout_constraintVertical_bias="0.196"
+        app:srcCompat="@drawable/ic_party_selected" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

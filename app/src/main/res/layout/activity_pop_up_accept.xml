@@ -5,6 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/popup_window_background"
+    android:background="@drawable/gradient_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PopUpAccept">
@@ -16,8 +17,8 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        app:cardBackgroundColor="#FFFFFF"
-        app:cardCornerRadius="3dp"
+        app:cardBackgroundColor="@color/ic_launcher_background"
+
         app:cardElevation="0dp"
         app:cardMaxElevation="0dp"
         app:cardPreventCornerOverlap="false"
@@ -32,7 +33,7 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:layout_margin="2dp"
-            app:cardBackgroundColor="@android:color/white"
+            app:cardBackgroundColor="@color/black"
             app:cardCornerRadius="3dp"
             app:cardElevation="0dp"
             app:cardMaxElevation="0dp"
@@ -69,12 +70,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:background="#FF9800"
-                    android:text="ok"
+                    android:fontFamily="@font/bebas"
+                    android:text="OK"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView
@@ -100,6 +103,8 @@
                     app:layout_constraintEnd_toEndOf="@+id/popNotiAdapt"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/popup_window_title" />
+
+
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
