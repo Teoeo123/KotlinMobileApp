@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        app:cardBackgroundColor="#FFFFFF"
+        app:cardBackgroundColor="#FF9800"
         app:cardCornerRadius="3dp"
         app:cardElevation="0dp"
         app:cardMaxElevation="0dp"

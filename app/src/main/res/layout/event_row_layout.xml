@@ -50,8 +50,8 @@ android:paddingRight="2dp"
 
         <TextView
             android:id="@+id/eName"
-            android:layout_width="236dp"
-            android:layout_height="wrap_content"
+            android:layout_width="174dp"
+            android:layout_height="24dp"
             android:text="Nazwa"
             android:textColor="#EFEFEF"
             android:textSize="20sp"
@@ -67,6 +67,16 @@ android:paddingRight="2dp"
             android:textColor="#787878"
             app:layout_constraintLeft_toRightOf="@+id/eventImg"
             app:layout_constraintTop_toBottomOf="@+id/eName" />
+
+        <TextView
+            android:id="@+id/tvShowDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="\??/??/?? ??:??"
+            android:textColor="@color/white"
+            android:textSize="9dp"
+            app:layout_constraintStart_toEndOf="@+id/eName"
+            tools:layout_editor_absoluteY="4dp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

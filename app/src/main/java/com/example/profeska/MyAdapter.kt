@@ -33,6 +33,13 @@ class MyAdapter(private val dataArray: ArrayList<DatabaseEvent>): RecyclerView.A
         holder.des.text=dataArray[holder.adapterPosition].description
         val storageRef= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("events/$photo")
         val localFile = File.createTempFile("temp","png")
+        if(dataArray[holder.adapterPosition].date.toString()!="null"){
+            holder.date.text= displayDateAndTime(dataArray[holder.adapterPosition].date.toString())
+        }else{
+            holder.date.alpha=0.toFloat()
+        }
+
+
         storageRef.getFile(localFile).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
             holder.pic.setImageBitmap(bitmap)
@@ -59,4 +66,5 @@ class MyViewHolder(private val view: View): RecyclerView.ViewHolder(view)
     val des=view.findViewById(R.id.eDes) as TextView
     val pic=view.findViewById(R.id.eventImg) as ImageView
     val click=view.findViewById(R.id.relativeLayout) as ConstraintLayout
+    val date=view.findViewById(R.id.tvShowDate) as TextView
 }
