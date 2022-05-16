@@ -17,12 +17,14 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_gchannel"
             android:layout_width="match_parent"
-            android:background="@color/ic_launcher_background"
             android:layout_height="?attr/actionBarSize"
+            android:background="@color/ic_launcher_background"
             android:theme="@style/Widget.AppCompat.Toolbar"
             app:popupTheme="@style/Theme.AppCompat.Light">
 
         </androidx.appcompat.widget.Toolbar>
+
+
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -47,19 +49,20 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#e0e0e0"
+        android:background="#000000"
         app:layout_constraintBottom_toTopOf="@+id/layout_gchat_chatbox" />
 
     <RelativeLayout
         android:id="@+id/layout_gchat_chatbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFB701"
+        android:background="@color/ic_launcher_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
 
         <EditText
+
             android:id="@+id/chat_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -67,18 +70,19 @@
             android:layout_marginStart="16dp"
             android:layout_toStartOf="@+id/chat_send"
             android:background="@android:color/white"
-            android:hint="Enter Message"
+            android:hint="Wpisz wiadomość"
             android:inputType="text"
             android:maxLines="6"
+            android:textColor="@color/black"
             tools:ignore="Autofill" />
 
         <Button
             android:id="@+id/chat_send"
-            android:layout_width="64dp"
+            android:layout_width="wrap_content"
             android:layout_height="48dp"
             android:layout_alignParentEnd="true"
             android:background="@color/ic_launcher_background"
-            android:text="Send" />
+            android:text="WYŚLIJ" />
 
     </RelativeLayout>
 

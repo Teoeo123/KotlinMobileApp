@@ -104,9 +104,6 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
 
         }
 
-        binding.btnodr.setOnClickListener {
-            startActivity(Intent(activity,LogoutActivity::class.java))
-        }
 
         return binding.root
 

@@ -12,11 +12,16 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.io.File
 
 
 class ChatAdapter(private val dataArray: ArrayList<MessageClass>): RecyclerView.Adapter<ChatViewHolder>(){
+
+
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatViewHolder {
         Log.d("ADAPTER","responding")
@@ -63,6 +68,7 @@ class ChatAdapter(private val dataArray: ArrayList<MessageClass>): RecyclerView.
                 holder.date.text=""
             }
             else{
+
                 holder.date.text=displayDateAndTime(dataArray[position].date.toString())
             }
 
@@ -70,6 +76,9 @@ class ChatAdapter(private val dataArray: ArrayList<MessageClass>): RecyclerView.
         else{
             holder.date.text=displayDateAndTime(dataArray[position].date.toString())
         }
+
+
+
 
 
 
@@ -87,6 +96,8 @@ class ChatViewHolder(private val view: View): RecyclerView.ViewHolder(view)
     val pic = view.findViewById(R.id.message_img_left) as ImageView
     val date= view.findViewById(R.id.tvMessDate) as TextView
     val box = view.findViewById(R.id.message_background) as CardView
+
+
 
 }
 

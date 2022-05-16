@@ -18,13 +18,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="192dp"
         android:autofillHints="name"
-        android:textColor="@color/white"
+
         android:ems="10"
         android:textCursorDrawable="@drawable/black_cursor"
         android:textColorHint="#F0BA26"
         android:backgroundTint="@color/button"
         android:inputType="textPersonName"
         android:hint="Nazwa Eventu"
+        android:textColor="@color/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +38,9 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="Opis"
-        android:textColor="@color/white"
+
+        android:textColor="@color/ic_launcher_background"
+
         android:textCursorDrawable="@drawable/black_cursor"
         android:textColorHint="#F0BA26"
         android:backgroundTint="@color/button"
@@ -57,10 +60,10 @@
         android:ems="10"
 
         android:textColorHint="#F0BA26"
-
+        android:textColor="@color/ic_launcher_background"
         android:backgroundTint="@color/button"
         android:hint="Ilość osób"
-        android:textColor="@color/ic_launcher_background"
+
 
         android:inputType="phone"
         app:layout_constraintStart_toStartOf="@+id/eventDes"
@@ -69,7 +72,7 @@
     <EditText
         android:id="@+id/eventCity"
         android:layout_width="wrap_content"
-
+        android:textColor="@color/ic_launcher_background"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Miasto"
@@ -85,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-
+        android:textColor="@color/ic_launcher_background"
         android:hint="Ulica"
         android:textCursorDrawable="@drawable/black_cursor"
         android:textColorHint="#F0BA26"
@@ -104,7 +107,7 @@
         android:textColorHint="#F0BA26"
         android:backgroundTint="@color/button"
         android:inputType="textPersonName"
-
+        android:textColor="@color/ic_launcher_background"
         app:layout_constraintStart_toStartOf="@+id/eventStreet"
         app:layout_constraintTop_toBottomOf="@+id/eventStreet" />
 
@@ -142,32 +145,29 @@
         app:layout_constraintTop_toBottomOf="@+id/btSetDate" />
 
     <LinearLayout
-        android:layout_width="266dp"
-        android:layout_height="49dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventNr">
+        >
 
-        <ImageButton
-            android:id="@+id/btnzatw"
-            android:layout_width="60dp"
-            android:layout_height="match_parent"
-            android:background="@null"
-            android:src="@drawable/ic_btncheck"
-            android:text="Zatwierdz"
-            android:tint="@color/ic_launcher_background" />
 
-        <Button
-            android:id="@+id/btnodr"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:backgroundTint="#C10C0C"
-            android:text="Odrzuć" />
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btnzatw"
+        android:layout_width="78dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="16dp"
+        android:background="@null"
+        android:src="@drawable/ic_btncheck"
+        android:text="Zatwierdz"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:tint="@color/ic_launcher_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
