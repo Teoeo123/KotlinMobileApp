@@ -59,6 +59,7 @@ class NotiAdapter(private val dataArray: ArrayList<WaitingClass>): RecyclerView.
         holder.accept.setOnClickListener {
             ref.child("$eventUid").child("waiting").child("$acceptUid").removeValue()
             ref.child("$eventUid").child("accepted").child("$acceptUid").setValue(acceptUid)
+            firebase.getReference("users").child("$acceptUid").child("accepted").push().setValue("$eventUid")
             holder.accept.isClickable = false
             holder.discard.isClickable = false
             holder.linLayout.alpha=0.toFloat()

@@ -147,26 +147,4 @@
         app:layout_constraintStart_toStartOf="@+id/etUserCity"
         app:layout_constraintTop_toBottomOf="@+id/rgSex" />
 
-    <Button
-        android:id="@+id/btSetDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FF9800"
-        android:text="Ustaw Date"
-        app:layout_constraintEnd_toEndOf="@+id/rgSex"
-        app:layout_constraintStart_toStartOf="@+id/rgSex"
-        tools:layout_editor_absoluteY="507dp" />
-
-    <TextView
-        android:id="@+id/tvDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:textColor="@color/white"
-        android:text="\??/??/?? ??:??"
-        app:layout_constraintEnd_toEndOf="@+id/btSetDate"
-        app:layout_constraintHorizontal_bias="0.568"
-        app:layout_constraintStart_toStartOf="@+id/btSetDate"
-        app:layout_constraintTop_toBottomOf="@+id/btSetDate" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

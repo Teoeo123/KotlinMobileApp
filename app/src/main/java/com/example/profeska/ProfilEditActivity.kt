@@ -30,7 +30,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class ProfilEditActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener {
+class ProfilEditActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProfilEditBinding
     private lateinit var myRef: DatabaseReference
@@ -38,17 +38,6 @@ class ProfilEditActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListene
     private lateinit var imageUri: Uri
     private  var plec = "xmr"
 
-    var day=0
-    var month=0
-    var year=0
-    var hour=0
-    var minute=0
-
-    var savedDay=0
-    var savedMonth=0
-    var savedYear=0
-    var savedHour=0
-    var savedMinute=0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -59,7 +48,6 @@ class ProfilEditActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListene
         setContentView(binding.root)
         fullScreen(window)
 
-        pickDate()
         val firebase =
             FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")
         user = FirebaseAuth.getInstance()
@@ -257,39 +245,6 @@ class ProfilEditActivity : AppCompatActivity(),DatePickerDialog.OnDateSetListene
         }
     }
 
-    private fun getDateTimeCalendar(){
-        val cal=Calendar.getInstance()
-        day = cal.get(Calendar.DAY_OF_MONTH)
-        month= cal.get(Calendar.MONTH)
-        year=cal.get(Calendar.YEAR)
-        hour=cal.get(Calendar.HOUR)
-        minute=cal.get(Calendar.MINUTE)
-    }
-
-    private fun pickDate(){
-        binding.btSetDate.setOnClickListener {
-            getDateTimeCalendar()
-            DatePickerDialog(this,this,year,month,day).show()
-        }
-    }
-
-
-    override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-        savedDay=dayOfMonth
-        savedMonth=month
-        savedYear=year
-
-        getDateTimeCalendar()
-        TimePickerDialog(this,this,hour,minute,true).show()
-    }
-
-    @SuppressLint("SetTextI18n")
-    override fun onTimeSet(p0: TimePicker?, hourOfDay: Int, minute: Int) {
-        savedHour=hourOfDay
-        savedMinute=minute
-
-        binding.tvDate.text="$savedMonth/$savedDay/$savedYear $savedHour:$savedMinute"
-    }
 
 }
 

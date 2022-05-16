@@ -26,8 +26,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/party_accept_rec"
-        android:layout_width="409dp"
-        android:layout_height="662dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toTopOf="@+id/btn_party_accept"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

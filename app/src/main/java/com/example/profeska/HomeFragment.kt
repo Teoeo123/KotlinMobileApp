@@ -71,15 +71,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun setUpAdapter(arrayData: ArrayList<DatabaseEvent>){
-
-
-
         binding.recyclerView.adapter = MyAdapter(arrayData)
-
-
-
-
     }
+
     }
 
 

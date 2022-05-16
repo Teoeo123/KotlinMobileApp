@@ -7,6 +7,8 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -15,6 +17,7 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.TimePicker
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 import com.example.profeska.databinding.FragmentAddBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -22,7 +25,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
-
 
 
 class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetListener,
@@ -67,28 +69,25 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
 
         pickDate()
 
-
         binding.imgEdit.setOnClickListener{
             selectImage()
+            legitCheck()
         }
 
         binding.btnzatw.isEnabled=false
         binding.btnzatw.imageAlpha=75
+        changeWatcher()
 
+        binding.eventName.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
 
-
-
-        /*
-            Sets whether the selector wheel shown during flinging/scrolling should
-            wrap around the minimum value and maximum value.
-        */
-
-
-
-
-
-
-
+        })
 
         binding.btnzatw.setOnClickListener {
 
@@ -109,16 +108,9 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
             startActivity(Intent(activity,LogoutActivity::class.java))
         }
 
-
-
-
         return binding.root
 
     }
-
-
-
-
 
 
 
@@ -135,10 +127,12 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
         val date="$savedYear${convertDate(savedMonth)}${convertDate(savedDay)}${convertDate(savedHour)}${convertDate(savedMinute)}"
         val data=DatabaseEvent(name,desc,slots,city,street,nr,photo,date)
         var events :List<DataSnapshot>
-
-
         myRef.child("$id").push().setValue(name)
         allRef.child("$photo").setValue(data)
+
+        FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")
+            .getReference("users").child("${user.uid}").child("accepted").push().setValue("$photo")
+
         return name
     }
     private fun convertDate(n:Int):String
@@ -224,6 +218,92 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
         savedMinute=minute
 
         binding.tvDate.text="${convertDate(savedMonth)}/${convertDate(savedDay)}/$savedYear $savedHour:$savedMinute"
+        legitCheck()
     }
+
+    private fun legitCheck(){
+        if(binding.eventName.text.isNotEmpty()
+            && binding.eventDes.text.isNotEmpty()
+            && binding.eventSlots.text.isNotEmpty()
+            && binding.eventCity.text.isNotEmpty()
+            && binding.eventStreet.text.isNotEmpty()
+            && binding.eventNr.text.isNotEmpty()
+            && savedMinute!=-1){
+            binding.btnzatw.isEnabled=true
+            binding.btnzatw.imageAlpha=255
+        }
+    }
+
+
+    private fun changeWatcher(){
+        binding.eventName.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventDes.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventSlots.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventCity.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventStreet.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventNr.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+    }
+
+
 
 }
