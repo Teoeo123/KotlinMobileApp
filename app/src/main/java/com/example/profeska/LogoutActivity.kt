@@ -27,6 +27,7 @@ class LogoutActivity : AppCompatActivity() {
         val profileFragment = Fragment1()
         val addFragment = AddFragment()
         val notificationFragment = NotificationFragment()
+        val chatPickFragment =ChatPickFragment()
 
         makeCurrentFragment(homeFragment)
 
@@ -36,6 +37,7 @@ class LogoutActivity : AppCompatActivity() {
                 R.id.ic_home -> makeCurrentFragment(homeFragment)
                 R.id.ic_add -> makeCurrentFragment(addFragment)
                 R.id.ic_noti ->makeCurrentFragment(notificationFragment)
+                R.id.ic_messeges->makeCurrentFragment(chatPickFragment)
             }
             true
         }

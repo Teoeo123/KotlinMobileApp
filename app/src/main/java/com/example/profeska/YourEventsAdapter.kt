@@ -58,7 +58,7 @@ class YourEventsAdapter(private val dataArray: ArrayList<DatabaseEvent>): Recycl
                 for(i in snapshot.children.withIndex()){
                     counter++
                 }
-                if(counter==0){
+                if(counter>=0){
                     val o:Float=0.toFloat()
                     holder.count.alpha = o
                 }

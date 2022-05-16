@@ -17,4 +17,8 @@
         android:id="@+id/ic_noti"
         android:icon="@drawable/notification_selector"
         android:title="Powiadomienia" />
+    <item
+        android:id="@+id/ic_messeges"
+        android:title="Wiadomości"
+        android:icon="@drawable/messag_selector"  />
 </menu>

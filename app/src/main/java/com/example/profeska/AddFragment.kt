@@ -17,6 +17,7 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.TimePicker
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doOnTextChanged
 import com.example.profeska.databinding.FragmentAddBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -70,17 +71,23 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
 
         binding.imgEdit.setOnClickListener{
             selectImage()
+            legitCheck()
         }
 
         binding.btnzatw.isEnabled=false
         binding.btnzatw.imageAlpha=75
+        changeWatcher()
 
+        binding.eventName.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
 
-
-
-
-
-
+        })
 
         binding.btnzatw.setOnClickListener {
 
@@ -107,10 +114,6 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
 
 
 
-
-
-
-
     private fun sendToBase():String
     {
         val id=user.uid
@@ -126,6 +129,10 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
         var events :List<DataSnapshot>
         myRef.child("$id").push().setValue(name)
         allRef.child("$photo").setValue(data)
+
+        FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")
+            .getReference("users").child("${user.uid}").child("accepted").push().setValue("$photo")
+
         return name
     }
     private fun convertDate(n:Int):String
@@ -211,6 +218,92 @@ class AddFragment : Fragment(R.layout.fragment_add), DatePickerDialog.OnDateSetL
         savedMinute=minute
 
         binding.tvDate.text="${convertDate(savedMonth)}/${convertDate(savedDay)}/$savedYear $savedHour:$savedMinute"
+        legitCheck()
     }
+
+    private fun legitCheck(){
+        if(binding.eventName.text.isNotEmpty()
+            && binding.eventDes.text.isNotEmpty()
+            && binding.eventSlots.text.isNotEmpty()
+            && binding.eventCity.text.isNotEmpty()
+            && binding.eventStreet.text.isNotEmpty()
+            && binding.eventNr.text.isNotEmpty()
+            && savedMinute!=-1){
+            binding.btnzatw.isEnabled=true
+            binding.btnzatw.imageAlpha=255
+        }
+    }
+
+
+    private fun changeWatcher(){
+        binding.eventName.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventDes.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventSlots.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventCity.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventStreet.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.eventNr.addTextChangedListener(object:TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+    }
+
+
 
 }

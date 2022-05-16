@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Profeska">
         <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".PartyAcceptActivity"
             android:exported="false" />
         <activity
@@ -31,35 +34,26 @@
         <activity
             android:name=".LogoutActivity"
             android:exported="false" />
-        <activity android:name=".SplashScreenActivity"
+        <activity
+            android:name=".SplashScreenActivity"
             android:exported="true"
-
             android:theme="@style/Theme.Transparent">
-
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-
-
-</activity>
-        <activity android:name=".MainActivity"
-
-            android:theme="@style/AppTheme"
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
