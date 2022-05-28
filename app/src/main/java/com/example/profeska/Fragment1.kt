@@ -22,7 +22,7 @@ import java.io.File
 
 
 class Fragment1 : Fragment(R.layout.fragment1) {
-
+        private lateinit var listOfEvents: ArrayList<DatabaseEvent>
         private var _binding: Fragment1Binding? = null
         private val binding
         get() = _binding!!
@@ -35,12 +35,16 @@ class Fragment1 : Fragment(R.layout.fragment1) {
         ): View? {
             _binding = Fragment1Binding.inflate(layoutInflater, container, false)
             LoadingScreen.displayLoadingWithText(activity,"Please wait...",false)
-
+            listOfEvents= ArrayList()
 
 
             user = FirebaseAuth.getInstance()
             val id=user.uid
             readUData(id)
+            val youEventRef=FirebaseDatabase.getInstance("gs://profeska-ad23d.appspot.com")
+                .getReference("users").child("$id").child("accepted")
+
+            //youEventRef.
 
             val imageName = "basic-profil.png"
             val storageRefIfAdd= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("users/$id")

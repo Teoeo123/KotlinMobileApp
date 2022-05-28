@@ -1,7 +1,10 @@
 package com.example.profeska
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
@@ -13,6 +16,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import org.w3c.dom.Text
 import kotlin.system.exitProcess
 
@@ -20,8 +27,8 @@ class LogoutActivity : AppCompatActivity() {
 
 
     private lateinit var notificationsBadges : View
-    private var count: Int = 1
-
+    private var count: Int = 0
+    private lateinit var userPartyList: ArrayList<String>
 
     private lateinit var binding: ActivityLogoutBinding
     private lateinit var user: FirebaseAuth
@@ -37,11 +44,41 @@ class LogoutActivity : AppCompatActivity() {
         user = FirebaseAuth.getInstance()
 
 
-
-
-        binding.btnUpdate.setOnClickListener{
-            updateBadgeCount(count++)
+        userPartyList=ArrayList()
+        val userRef =FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")
+            .getReference("users").child("${user.uid}")
+        val ref= FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")
+            .getReference("events")
+        Log.d("UID","${user.uid}")
+        userRef.get().addOnSuccessListener{
+            Log.d("IT","$it")
+            if(it.value.toString()=="null")
+                startActivity(Intent(this,ProfilEditActivity::class.java))
         }
+
+        ref.addValueEventListener(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                count=0
+                for (i in snapshot.child("users").child("${user.uid}").children)
+                {
+                    Log.d("I_SNAP","${user.uid}${i.value}")
+                    for(j in snapshot.child("all").child("${user.uid}${i.value}").child("waiting").children)
+                    {
+                        Log.d("J_SNAP","${j.value}")
+                        count++
+                    }
+                }
+                updateBadgeCount(count)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+
+        })
+
+
+
 
 
         val profileFragment = Fragment1()
@@ -107,17 +144,20 @@ class LogoutActivity : AppCompatActivity() {
 
 
     }
-    private fun updateBadgeCount(count: Int = 0){
-        val itemView : BottomNavigationItemView? = binding.bottomNavigation.getChildAt(5) as? BottomNavigationItemView
-        notificationsBadges=LayoutInflater.from(this)
-            .inflate(R.layout.badge_text, itemView, true)
+    private fun updateBadgeCount(count: Int = 0) {
+        if (count != 0) {
+            val itemView: BottomNavigationItemView? =
+                binding.bottomNavigation.getChildAt(5) as? BottomNavigationItemView
+            notificationsBadges = LayoutInflater.from(this)
+                .inflate(R.layout.badge_text, itemView, true)
 
-        val pic=notificationsBadges.findViewById(R.id.noti_badge) as TextView
+            val pic = notificationsBadges.findViewById(R.id.noti_badge) as TextView
             pic?.text = count.toString()
 
 
-        binding.bottomNavigation?.addView(notificationsBadges)
+            binding.bottomNavigation?.addView(notificationsBadges)
 
+        }
     }
 
 }
