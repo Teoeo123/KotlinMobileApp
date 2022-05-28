@@ -59,8 +59,13 @@ class YourEventsAdapter(private val dataArray: ArrayList<DatabaseEvent>): Recycl
                     counter++
                 }
                 if(counter>=0){
-                    val o:Float=0.toFloat()
+                    val o:Float=1.toFloat()
                     holder.count.alpha = o
+                    holder.count.text = counter.toString()
+                }
+                else
+                {
+                    holder.count.alpha = 1.toFloat()
                 }
 
                 holder.count.text=counter.toString()

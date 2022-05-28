@@ -48,7 +48,7 @@ class ChatPickAdapter(private val dataArray: ArrayList<String>): RecyclerView.Ad
             holder.click.setOnClickListener{
                 Log.d("test","klikanie działa")
                 val myIntent= Intent(holder.itemView.context, ChatActivity::class.java)
-                myIntent.putExtra("id",photo)
+                myIntent.putExtra("id",photo).putExtra("name","${holder.name.text}")
                 startActivity(holder.itemView.context,myIntent,null)
 
             }

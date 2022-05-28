@@ -12,17 +12,21 @@
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_gchannel"
+        >
+
+        <TextView
+            android:id="@+id/tv_event_name"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/ic_launcher_background"
-            android:theme="@style/Widget.AppCompat.Toolbar"
-            app:popupTheme="@style/Theme.AppCompat.Light">
+            android:layout_height="wrap_content"
+            android:text="Event"
+            android:fontFamily="@font/bebas"
+            android:textSize="30sp"
+            android:gravity="center"
+            />
 
-        </androidx.appcompat.widget.Toolbar>
+
 
 
     </com.google.android.material.appbar.AppBarLayout>

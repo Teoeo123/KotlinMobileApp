@@ -26,11 +26,12 @@ class ChatActivity : AppCompatActivity() {
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
         fullScreen(window)
-
+        val eventN :String?
         val eventId :String?
         val extras = intent.extras
         if (extras != null) {
             eventId = extras.getString("id")
+            eventN=extras.getString("name")
         }
         else
         {
@@ -39,6 +40,8 @@ class ChatActivity : AppCompatActivity() {
             return
         }
         binding.rvChat.layoutManager= LinearLayoutManager(this)
+
+        binding.tvEventName.text="$eventN"
 
         val ref=FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app").getReference("chats").child(eventId.toString())
         listOfMessages= ArrayList()

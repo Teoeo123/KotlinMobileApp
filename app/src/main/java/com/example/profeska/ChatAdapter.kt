@@ -42,10 +42,23 @@ class ChatAdapter(private val dataArray: ArrayList<MessageClass>): RecyclerView.
                 gravity = Gravity.RIGHT
                 marginEnd=2
             }
+            holder.pic.alpha=0.toFloat()
+            holder.box.setCardBackgroundColor(Color.argb(255, 40, 40, 40))
             holder.box.layoutParams = params;
         }
         else
         {
+            val params = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                weight = 1.0f
+                gravity = Gravity.LEFT
+                marginEnd=2
+            }
+
+            holder.pic.alpha=1.toFloat()
+            holder.box.layoutParams=params
             holder.box.setCardBackgroundColor(Color.argb(255, 242, 173, 12))
 
             val photo=dataArray[position].id

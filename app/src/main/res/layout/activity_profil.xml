@@ -50,10 +50,11 @@
         android:id="@+id/txtPlecP"
         android:layout_width="350dp"
         android:layout_height="46dp"
+        android:layout_marginTop="8dp"
         android:text="płeć"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/txtNumP"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/txtNumP"
         app:layout_constraintTop_toBottomOf="@+id/txtMiastP" />
 

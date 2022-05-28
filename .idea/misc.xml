@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/bg_badge.xml" value="0.1665" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/border.xml" value="0.1" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/circle.xml" value="0.1" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/drawable/gradient_background.xml" value="0.22" />
@@ -14,12 +15,13 @@
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_events.xml" value="0.25" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_logout.xml" value="0.25" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_main.xml" value="0.67" />
-        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_party_accept.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_party_accept.xml" value="0.25" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_pop_up_accept.xml" value="0.33" />
-        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_profil.xml" value="0.33" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_profil.xml" value="0.25" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_profil_edit.xml" value="0.13703140830800406" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/badge_text.xml" value="0.2703125" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/event_row_layout.xml" value="0.6549935149156939" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/fragment1.xml" value="0.5" />
         <entry key="..\:/Users/Adam/AndroidStudioProjects/Profeska/app/src/main/res/layout/fragment_add.xml" value="0.15934065934065933" />

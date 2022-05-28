@@ -40,6 +40,7 @@ class NotificationFragment : Fragment(R.layout.fragment_notification) {
 
         firebase.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                listOfEvents.clear()
                 for(i in snapshot.children){
                     if(i.child("photo").value.toString().contains("${user.uid}")) {
                         val newRow = i.getValue(DatabaseEvent::class.java)

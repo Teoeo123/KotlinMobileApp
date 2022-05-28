@@ -2,14 +2,26 @@ package com.example.profeska
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.profeska.databinding.ActivityLogoutBinding
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 
 import com.google.firebase.auth.FirebaseAuth
+import org.w3c.dom.Text
 import kotlin.system.exitProcess
 
 class LogoutActivity : AppCompatActivity() {
+
+
+    private lateinit var notificationsBadges : View
+    private var count: Int = 1
+
 
     private lateinit var binding: ActivityLogoutBinding
     private lateinit var user: FirebaseAuth
@@ -23,6 +35,14 @@ class LogoutActivity : AppCompatActivity() {
         setContentView(binding.root)
         fullScreen(window)
         user = FirebaseAuth.getInstance()
+
+
+
+
+        binding.btnUpdate.setOnClickListener{
+            updateBadgeCount(count++)
+        }
+
 
         val profileFragment = Fragment1()
         val addFragment = AddFragment()
@@ -85,6 +105,18 @@ class LogoutActivity : AppCompatActivity() {
         backPressedTime = System.currentTimeMillis()
 
 
+
+    }
+    private fun updateBadgeCount(count: Int = 0){
+        val itemView : BottomNavigationItemView? = binding.bottomNavigation.getChildAt(5) as? BottomNavigationItemView
+        notificationsBadges=LayoutInflater.from(this)
+            .inflate(R.layout.badge_text, itemView, true)
+
+        val pic=notificationsBadges.findViewById(R.id.noti_badge) as TextView
+            pic?.text = count.toString()
+
+
+        binding.bottomNavigation?.addView(notificationsBadges)
 
     }
 

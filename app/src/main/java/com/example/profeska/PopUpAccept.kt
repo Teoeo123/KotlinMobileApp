@@ -46,6 +46,7 @@ class PopUpAccept : AppCompatActivity() {
         ref.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 listOfWaiting= ArrayList()
+                listOfWaiting.clear()
                 for(i in snapshot.children)
                 {
                     Log.d("ID_TEST",i.toString())

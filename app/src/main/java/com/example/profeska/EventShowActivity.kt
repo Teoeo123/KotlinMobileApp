@@ -117,18 +117,38 @@ class EventShowActivity : AppCompatActivity() {
                                             if(!snapshot.exists())
                                             {
                                                 Log.d("TEST","Dziala")
-                                                if(!value.toString().contains(uUid))
-                                                evRef.child("waiting").child("$id").setValue(id).addOnFailureListener {
+                                                if(!value.toString().contains(uUid)){
+                                                    binding.btnAplEvSh.isClickable=false
+                                                    binding.btnAplEvSh.alpha=0.25.toFloat()
+                                                    evRef.child("waiting").child("$id").setValue(id).addOnFailureListener {
 
+                                                    }
                                                 }
+                                                else{
+                                                    binding.btnAplEvSh.isClickable=false
+                                                    binding.btnAplEvSh.alpha=0.25.toFloat()
+                                                }
+
+                                            }
+                                            else{
+                                                binding.btnAplEvSh.isClickable=false
+                                                binding.btnAplEvSh.alpha=0.25.toFloat()
                                             }
                                         }
                                         override fun onCancelled(databaseError: DatabaseError) {Log.d("onCancelled", "active")}
                                     })
                                 }
+                                else{
+                                    binding.btnAplEvSh.isClickable=false
+                                    binding.btnAplEvSh.alpha=0.25.toFloat()
+                                }
                             }
                             override fun onCancelled(databaseError: DatabaseError) {Log.d("onCancelled", "active")}
                         })
+                    }
+                    else{
+                        binding.btnAplEvSh.isClickable=false
+                        binding.btnAplEvSh.alpha=0.25.toFloat()
                     }
                 }
                 override fun onCancelled(databaseError: DatabaseError) {Log.d("onCancelled", "active")}
