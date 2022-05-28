@@ -157,6 +157,7 @@ class LogoutActivity : AppCompatActivity() {
 
             binding.bottomNavigation?.addView(notificationsBadges)
 
+
         }
     }
 

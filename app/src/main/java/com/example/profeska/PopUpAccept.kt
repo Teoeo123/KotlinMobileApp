@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -112,10 +113,12 @@ class PopUpAccept : AppCompatActivity() {
         colorAnimation.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 finish()
+
                 overridePendingTransition(0, 0)
             }
         })
         colorAnimation.start()
+        startActivity(Intent(this,LogoutActivity::class.java))
     }
 
     private fun notiSetUpAdapter(arrayData: ArrayList<WaitingClass>){

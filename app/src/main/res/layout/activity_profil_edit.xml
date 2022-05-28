@@ -123,28 +123,32 @@
             android:text="Inne" />
     </RadioGroup>
 
+
     <Button
         android:id="@+id/btnAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
         android:backgroundTint="#4CAF50"
         android:text="Zatwierdź"
-        app:layout_constraintEnd_toStartOf="@+id/btnCancel"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/etUserCity"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/rgSex"
+        app:layout_constraintStart_toStartOf="@+id/rgSex"
         app:layout_constraintTop_toBottomOf="@+id/rgSex" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnCancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
-        android:backgroundTint="#F44336"
-        android:text="Odrzuć"
-        app:layout_constraintEnd_toEndOf="@+id/etUserCity"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/etUserCity"
-        app:layout_constraintTop_toBottomOf="@+id/rgSex" />
+        android:layout_width="47dp"
+        android:layout_height="43dp"
+        android:background="@null"
+        android:tint="#E90B0B"
+        android:scaleY="2"
+        android:scaleX="2"
+        app:layout_constraintBottom_toBottomOf="@+id/profPicEdit"
+        app:layout_constraintEnd_toStartOf="@+id/profPicEdit"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.505"
+        app:srcCompat="@drawable/ic_cancel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

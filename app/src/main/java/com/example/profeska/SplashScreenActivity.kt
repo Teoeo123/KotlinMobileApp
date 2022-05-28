@@ -6,6 +6,7 @@ import android.os.Handler
 
 
 import android.view.animation.AnimationUtils
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.profeska.databinding.ActivitySplashScreenBinding
@@ -22,12 +23,15 @@ class SplashScreenActivity:AppCompatActivity() {
 
 
 
-
+        val imageAnimation = AnimationUtils.loadAnimation(this,R.anim.image_animation)
         val topAnimation = AnimationUtils.loadAnimation(this,R.anim.top_anmiation)
         val middleAnimation = AnimationUtils.loadAnimation(this,R.anim.middle_animation)
         val top = findViewById<TextView>(R.id.TopTextView)
         val mid= findViewById<TextView>(R.id.MiddleTextView)
+        val image = findViewById<ImageView>(R.id.splashLogo)
 
+
+        image.startAnimation(imageAnimation)
        top.startAnimation(topAnimation)
        mid.startAnimation(middleAnimation)
 

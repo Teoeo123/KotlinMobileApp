@@ -69,14 +69,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="#FF9800"
-                    android:text="ok"
                     android:fontFamily="@font/bebas"
                     android:paddingBottom="2dp"
+                    android:text="ok"
                     android:textAllCaps="false"
                     android:textColor="#FFFFFF"
                     android:textSize="20sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <androidx.recyclerview.widget.RecyclerView

@@ -11,6 +11,8 @@ import android.net.Uri
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.view.WindowInsets
 import android.view.WindowManager
@@ -123,12 +125,21 @@ class ProfilEditActivity : AppCompatActivity() {
                     }
 
                 }
+                else{
+                    binding.btnAcc.isEnabled=false
+                    binding.btnAcc.alpha=0.3.toFloat()
+                    binding.btnCancel.isEnabled=false
+                    binding.btnCancel.alpha=0.toFloat()
+                }
 
             }
         }
 
 
         readUData(id)
+
+        changeWatcher()
+
 
         binding.btnAcc.setOnClickListener {
 
@@ -172,6 +183,7 @@ class ProfilEditActivity : AppCompatActivity() {
         if (name.isEmpty()) {
 
             Toast.makeText(this, "Uzupełnij imię!", Toast.LENGTH_SHORT).show()
+
             return
         }
         if (sName.isEmpty()) {
@@ -243,6 +255,70 @@ class ProfilEditActivity : AppCompatActivity() {
             binding.profPicEdit.setImageURI(imageUri)
             Log.d("TEST", "$imageUri")
         }
+    }
+
+    private fun legitCheck(){
+        if(binding.etUserName.text.isNotEmpty()
+            && binding.etUserSName.text.isNotEmpty()
+            && binding.etUserCity.text.isNotEmpty()
+            && binding.etUserPhon.text.isNotEmpty()
+
+        ){
+            binding.btnAcc.isEnabled=true
+            binding.btnAcc.alpha=1.toFloat()
+        }
+    }
+
+
+    private fun changeWatcher(){
+        binding.etUserName.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.etUserSName.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.etUserPhon.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+        })
+
+        binding.etUserCity.addTextChangedListener(object: TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+            }
+            override fun afterTextChanged(p0: Editable?) {
+                legitCheck()
+            }
+
+
+        }
+
+
+        )
+
     }
 
 
