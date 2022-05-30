@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Profeska">
         <activity
+            android:name=".UsersProfile"
+            android:exported="false" />
+        <activity
             android:name=".ChatActivity"
             android:exported="false" />
         <activity

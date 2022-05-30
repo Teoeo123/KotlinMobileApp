@@ -8,7 +8,7 @@
 
 
     <ImageView
-        android:id="@+id/imgProfPic"
+        android:id="@+id/usrProfPic"
         android:layout_width="300px"
         android:layout_height="300px"
         android:layout_marginTop="44dp"
@@ -22,12 +22,12 @@
         android:layout_height="46dp"
         android:text="Nazwisko"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtImieP"
-        app:layout_constraintStart_toStartOf="@+id/txtImieP"
-        app:layout_constraintTop_toBottomOf="@+id/txtImieP" />
+        app:layout_constraintEnd_toEndOf="@+id/usrImieP"
+        app:layout_constraintStart_toStartOf="@+id/usrImieP"
+        app:layout_constraintTop_toBottomOf="@+id/usrImieP" />
 
     <TextView
-        android:id="@+id/txtNumP"
+        android:id="@+id/usrNumP"
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:text="numer"
@@ -37,29 +37,29 @@
         app:layout_constraintTop_toBottomOf="@+id/txtNazwiP" />
 
     <TextView
-        android:id="@+id/txtMiastP"
+        android:id="@+id/usrMiastP"
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:text="miasto"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtNumP"
-        app:layout_constraintStart_toStartOf="@+id/txtNumP"
-        app:layout_constraintTop_toBottomOf="@+id/txtNumP" />
+        app:layout_constraintEnd_toEndOf="@+id/usrNumP"
+        app:layout_constraintStart_toStartOf="@+id/usrNumP"
+        app:layout_constraintTop_toBottomOf="@+id/usrNumP" />
 
     <TextView
-        android:id="@+id/txtPlecP"
+        android:id="@+id/usrPlecP"
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:layout_marginTop="8dp"
         android:text="płeć"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtNumP"
+        app:layout_constraintEnd_toEndOf="@+id/usrNumP"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/txtNumP"
-        app:layout_constraintTop_toBottomOf="@+id/txtMiastP" />
+        app:layout_constraintStart_toStartOf="@+id/usrNumP"
+        app:layout_constraintTop_toBottomOf="@+id/usrMiastP" />
 
     <TextView
-        android:id="@+id/txtImieP"
+        android:id="@+id/usrImieP"
         android:layout_width="350dp"
         android:layout_height="46dp"
         android:text="Imie"
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgProfPic" />
+        app:layout_constraintTop_toBottomOf="@+id/usrProfPic" />
 
     <Button
         android:id="@+id/btnEditProfP"
