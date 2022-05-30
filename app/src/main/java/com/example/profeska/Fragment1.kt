@@ -11,10 +11,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.profeska.databinding.Fragment1Binding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import com.handyopnion.LoadingScreen
 import com.handyopnion.LoadingScreen.hideLoading
@@ -37,14 +37,36 @@ class Fragment1 : Fragment(R.layout.fragment1) {
             LoadingScreen.displayLoadingWithText(activity,"Please wait...",false)
             listOfEvents= ArrayList()
 
+            binding.rcYourParty.layoutManager= LinearLayoutManager(activity)
+
+            binding.rcYourParty.adapter
+
 
             user = FirebaseAuth.getInstance()
             val id=user.uid
-            readUData(id)
-            val youEventRef=FirebaseDatabase.getInstance("gs://profeska-ad23d.appspot.com")
-                .getReference("users").child("$id").child("accepted")
 
-            //youEventRef.
+            val youEventRef=FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app").reference
+            Log.d("RESPOND","$youEventRef")
+            youEventRef.addValueEventListener(object: ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    Log.d("SNAP","${snapshot.child("users").child("$id").child("accepted").children}")
+                    listOfEvents.clear()
+                    for( i in snapshot.child("users").child("$id").child("accepted").children)
+                    {
+                        Log.d("I_TEST","$i")
+                        val row= snapshot.child("events").child("all").child("${i.value}").getValue(DatabaseEvent::class.java)
+                        listOfEvents.add(row!!);
+                    }
+                    Log.d("ARRAY","${listOfEvents.size}")
+                    setUpAdapter(listOfEvents)
+                }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Log.d("FAIL?","TRUE")
+                }
+
+            })
+            readUData(id)
 
             val imageName = "basic-profil.png"
             val storageRefIfAdd= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("users/$id")
@@ -147,6 +169,10 @@ class Fragment1 : Fragment(R.layout.fragment1) {
                 startActivity(Intent(activity,ProfilEditActivity::class.java))
             }
         }
+    }
+
+    private fun setUpAdapter(arrayData: ArrayList<DatabaseEvent>){
+        binding.rcYourParty.adapter = MyAdapter(arrayData)
     }
 
     }

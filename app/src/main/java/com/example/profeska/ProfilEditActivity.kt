@@ -208,12 +208,12 @@ class ProfilEditActivity : AppCompatActivity() {
             return
         }
 
-        val firebaseInput = DatabaseRow(name, sName, number, city, plec)
+        myRef.child(id.toString()).child("city").setValue(city)
+        myRef.child(id.toString()).child("name").setValue(name)
+        myRef.child(id.toString()).child("sname").setValue(sName)
+        myRef.child(id.toString()).child("number").setValue(number)
+        myRef.child(id.toString()).child("sex").setValue(plec)
 
-
-
-
-        myRef.child(id.toString()).setValue(firebaseInput)
         startActivity(Intent(this, LogoutActivity::class.java))
         if (imageUri != null) {
             uploadImage()

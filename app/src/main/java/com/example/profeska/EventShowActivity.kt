@@ -1,17 +1,18 @@
 package com.example.profeska
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.profeska.databinding.ActivityEventShowBinding
 import com.google.firebase.auth.FirebaseAuth
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.database.FirebaseDatabase
 import java.io.File
 
 class EventShowActivity : AppCompatActivity() {
@@ -101,7 +102,45 @@ class EventShowActivity : AppCompatActivity() {
 
             }
         })
+        val fireRef = FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app").getReference("events")
+            .child("all").child("$value")
 
+        fireRef.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+               var  state=0
+                for(i in snapshot.child("waiting").children)
+                {
+                    if(i.value.toString()==user.uid.toString())
+                    {
+                        state=1
+                    }
+                }
+                for(i in snapshot.child("accepted").children)
+                {
+                    if(i.value.toString()==user.uid.toString())
+                    {
+                        state=2
+                    }
+                }
+                for (i in snapshot.child("rejected").children)
+                {
+                    if(i.value.toString()==user.uid.toString())
+                    {
+                        state=3
+                    }
+                }
+                btnState(state)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
+
+
+
+/*
         binding.btnAplEvSh.setOnClickListener {
             val uUid = "${user.uid}"
             evRef.child("waiting").child(uUid).addValueEventListener(object: ValueEventListener {
@@ -154,11 +193,51 @@ class EventShowActivity : AppCompatActivity() {
                 override fun onCancelled(databaseError: DatabaseError) {Log.d("onCancelled", "active")}
             })
         }
-
+*/
 
     }
     private fun userSetUpAdapter(arrayData: ArrayList<String>){
         binding.UserAdapter.adapter = UserAdapter(arrayData)
+    }
+
+    @SuppressLint("QueryPermissionsNeeded")
+    private fun btnState(a: Int){
+        val id=user.uid.toString()
+        val btn= binding.btnAplEvSh
+        if(a==1 || a==3){
+            btn.alpha=0.2.toFloat()
+            btn.isClickable= false
+        }
+        else if(a==2){
+            var city: String ="?"
+            var street: String="?"
+            var num:String="?"
+            evRef.get().addOnSuccessListener {
+                city=it.child("city").value.toString()
+                num=it.child("num").value.toString()
+               street=it.child("street").value.toString()
+                num=num.replace('/','+')
+            }
+
+            btn.text="Szczegóły"
+            btn.setOnClickListener{
+                Log.d("CLICK","Tu włącza się aktywność szczegółów")
+                val intent = Intent(
+                    Intent.ACTION_VIEW,
+                    Uri.parse("https://www.google.com/maps/place/Poland,+$street+$num,+$city")
+                )
+                startActivity(intent)
+            }
+
+
+        }
+        else{
+            btn.setOnClickListener{
+                evRef.child("waiting").child(id).setValue(id).addOnFailureListener {}
+            }
+
+        }
+
     }
 
 
