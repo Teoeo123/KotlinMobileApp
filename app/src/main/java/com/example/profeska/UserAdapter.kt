@@ -49,9 +49,16 @@ class UserAdapter(private val dataArray: ArrayList<String>): RecyclerView.Adapte
             holder.pic.setImageBitmap(bitmap)
             holder.pbar.alpha=0.toFloat()
 
-        }
 
+        }
+        holder.click.setOnClickListener{
+            val myIntent= Intent(holder.itemView.context, UsersProfile::class.java)
+            myIntent.putExtra("id",dataArray[position])
+            startActivity(holder.itemView.context,myIntent,null)
+
+        }
     }
+
 
     override fun getItemCount(): Int {
         return dataArray.size

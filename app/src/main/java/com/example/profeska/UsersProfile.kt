@@ -1,12 +1,15 @@
 package com.example.profeska
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.profeska.databinding.ActivityUsersProfileBinding
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import java.io.File
 
 class UsersProfile : AppCompatActivity() {
 
@@ -30,8 +33,17 @@ class UsersProfile : AppCompatActivity() {
             return
         }
 
+        val storageRef= FirebaseStorage.getInstance("gs://profeska-ad23d.appspot.com").reference.child("users/$value")
+
+        val localFile = File.createTempFile("temp","png")
+
+        storageRef.getFile(localFile).addOnSuccessListener {
+            val bitmap = BitmapFactory.decodeFile(localFile.absolutePath)
+            binding.usrProfPic.setImageBitmap(bitmap)
+        }
+
         val ref=FirebaseDatabase.getInstance("https://profeska-ad23d-default-rtdb.europe-west1.firebasedatabase.app")
-            .getReference("users").child("value")
+            .getReference("users").child("$value")
         ref.get().addOnSuccessListener {
             val name= it.child("name").value.toString()
             val sname= it.child("sname").value.toString()
@@ -41,6 +53,9 @@ class UsersProfile : AppCompatActivity() {
 
             binding.usrImieP.text="$name $sname"
             binding.usrMiastP.text= city
+            binding.usrNumP.text = phon
+            binding.usrMiastP.text = city
+            binding.usrPlecP.text= sex
 
 
             if(binding.usrPlecP.text.contains("Kobieta")){
@@ -76,6 +91,10 @@ class UsersProfile : AppCompatActivity() {
 
 
 
+        }
+
+        binding.btnBack.setOnClickListener{
+            finish()
         }
 
 
